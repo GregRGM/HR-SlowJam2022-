@@ -23,14 +23,16 @@ public class BaseProjectile : MonoBehaviour
         _proRB.velocity = transform.forward * _pSpeed;
         yield return new WaitForSeconds(_meshDelay);
         renderer.enabled = true;
+        Destroy(gameObject, 6f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         EntityHealth healthobj = other.GetComponent<EntityHealth>();
-        if (healthobj)
+        if (healthobj != null)
         {
-            healthobj.DamageEntity(_damageAmount.Variable.RuntimeValue);
+            healthobj.DamageEntity(10);
+            Destroy(gameObject);
         }
     }
 }

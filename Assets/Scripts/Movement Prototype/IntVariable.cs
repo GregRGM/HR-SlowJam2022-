@@ -25,11 +25,23 @@ public class IntVariable : ScriptableObject, ISerializationCallbackReceiver
 public class IntReference
 {
     public bool UseConstant = true;
-    public float ConstantValue;
+    public int ConstantValue;
     public IntVariable Variable;
 
-    public float Value
+    public int Value
     {
         get { return UseConstant ? ConstantValue : Variable.RuntimeValue; }
+    }
+
+    public void SetValue(int newvalue)
+    {
+        if (UseConstant)
+        {
+            ConstantValue = newvalue;
+        }
+        else
+        {
+            Variable.RuntimeValue = newvalue;
+        }
     }
 }

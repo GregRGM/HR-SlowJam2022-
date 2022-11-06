@@ -12,10 +12,13 @@ public class EntityHealth : MonoBehaviour
     {
         if (!WillKillEntity(amount))
         {
-            _currentHealth.Variable.RuntimeValue -= amount;
+            int health = _currentHealth.Value;
+            health -= amount;
+            _currentHealth.SetValue(health);
         }
         else
         {
+            Debug.Log("Killed enemy");
             KillEntity();
         }
     }
@@ -24,18 +27,20 @@ public class EntityHealth : MonoBehaviour
         bool willOverheal = (_currentHealth.Variable.RuntimeValue + amount > _maxHealth);
         if (willOverheal)
         {
-            _currentHealth.Variable.RuntimeValue = _maxHealth;
+            _currentHealth.SetValue(_maxHealth);
         }
         else
         {
-            _currentHealth.Variable.RuntimeValue += amount;
+            int health = _currentHealth.Value;
+            health += amount;
+            _currentHealth.SetValue(health);
         }
     }
 
     private bool WillKillEntity(int amount)
     {
-        int theoryhealth = _currentHealth.Variable.RuntimeValue;
-        return (theoryhealth - amount > 0);
+        int theoryhealth = _currentHealth.Value;
+        return ((theoryhealth - amount) < 0.1f);
     }
 
     private void KillEntity()

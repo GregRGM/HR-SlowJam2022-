@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab915ac44b6f4542a6581986b783a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pSpeed: 6
-  _meshDelay: 0.5
+  _pSpeed: 30
+  _meshDelay: 0.2
   _damageAmount:
     UseConstant: 1
     ConstantValue: 10
