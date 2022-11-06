@@ -37,7 +37,7 @@ public class LaserHandler : MonoBehaviour
             lr.enabled = true;
             lr.SetPosition(0, startPoint.position);
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, /*-transform.right*/laserDirection, out hit, LayerMask.GetMask("OnlyBlockPlayer")))
+            if (Physics.Raycast(transform.position, /*-transform.right*/laserDirection, out hit, 99999f, ~LayerMask.GetMask("OnlyBlockPlayer")))
             {
                 if (hit.collider)
                 {
