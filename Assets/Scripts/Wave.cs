@@ -7,4 +7,8 @@ using System;
 public class Wave : MonoBehaviour
 {
     public SpawnPoint[] spawnPoints;
+    public GameObject enemy;
+    public int count;
+    public float rate;
+
 }
