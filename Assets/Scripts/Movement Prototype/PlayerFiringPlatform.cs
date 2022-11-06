@@ -27,9 +27,10 @@ public class PlayerFiringPlatform : MonoBehaviour
         }
         
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
-            FireShot();
+            //FireShot();
+            FireSpread();
         }
     }
 
@@ -43,5 +44,13 @@ public class PlayerFiringPlatform : MonoBehaviour
         Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
 
         
+    }
+    
+    private void FireSpread()
+    {
+        Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
+        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
+        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up));
+        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .9f, AimDirection.y * .9f, AimDirection.z), Vector3.up));        
     }
 }
