@@ -11,6 +11,8 @@ public class BaseProjectile : MonoBehaviour
     [SerializeField] private float _meshDelay;
 
     [SerializeField] private IntReference _damageAmount;
+
+    [SerializeField] private GameObject hitFeedback;
     private void Awake()
     {
         _proRB = GetComponent<Rigidbody>();

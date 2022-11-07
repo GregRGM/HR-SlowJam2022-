@@ -1,3 +1,4 @@
+using Ludiq.PeekCore;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,6 @@ using UnityEngine;
 
 enum WeaponSelection
 {
-    None,
     Fireball,
     Spread,
     Laser
@@ -22,9 +22,11 @@ public class PlayerFiringPlatform : MonoBehaviour
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private LayerMask ignoreLayer;
 
-    private Vector3 laserOffset = new Vector3(0, 1f, 1f);
+    [SerializeField] private float fireballShotRate = 60, spreadShotRate = 30, laserHitRate = 1f;
 
     [SerializeField] private WeaponSelection weaponSelection;
+
+    //private float time = 0f;
 
     private void Update()
     {
@@ -37,26 +39,77 @@ public class PlayerFiringPlatform : MonoBehaviour
             hitpoint.position = raycastHit.point;
             //Debug.Log(mouseWorldPosition);
         }
-        
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
-            switch(weaponSelection)
+            weaponSelection += Mathf.FloorToInt(Input.GetAxis("Mouse ScrollWheel") * 10);
+            if(weaponSelection < 0)
+                weaponSelection = WeaponSelection.Laser;    
+            else if(weaponSelection > WeaponSelection.Laser)
+                weaponSelection = WeaponSelection.Fireball;
+        }
+
+        if(Input.mouseScrollDelta.y < 0)
+        {
+            //(int) weaponSelection -= mouseScrollDelta.y;
+            if(weaponSelection < 0)
+            {
+                weaponSelection = WeaponSelection.Laser;
+            }
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            //time += Time.deltaTime;
+
+            switch (weaponSelection)
             {
                 case WeaponSelection.Fireball:
-                    FireShot();
+                    {
+                        //if(time > fireballShotRate)
+                        //    FireShot();
+                        //time = 0f;
+                        InvokeRepeating("FireShot", 0f, 1 / fireballShotRate);
+                    }
                     break;
                 case WeaponSelection.Spread:
-                    FireSpread();
+                    {
+                        InvokeRepeating("FireSpread", 0f, 1 / spreadShotRate);
+                    }
                     break;
                 case WeaponSelection.Laser:
-                    FireLaser();
+                    {
+                        FireLaser();
+                    }
                     break;
                 default:
                     break;
             }
-
         }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            switch (weaponSelection)
+            {
+                case WeaponSelection.Fireball:
+                    {
+                        CancelInvoke("FireShot");
+                    }
+                    break;
+                case WeaponSelection.Spread:
+                    {
+                        CancelInvoke("FireSpread");
+                    }
+                    break;
+                case WeaponSelection.Laser:
+                    {
+                        laserObject.GetComponent<LaserHandler>().ToggleLaser(false);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 
     private void OnDrawGizmos()
@@ -81,9 +134,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     {
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
         laserObject.GetComponent<LaserHandler>().ToggleLaser(true, AimDirection);
-
-        //Instantiate(laserProjPrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
-       
+        //Instantiate(laserProjPrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));      
 
     }
 }

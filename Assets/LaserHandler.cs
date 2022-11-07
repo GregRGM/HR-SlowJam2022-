@@ -20,6 +20,7 @@ public class LaserHandler : MonoBehaviour
     public void ToggleLaser(bool _toggle)
     {
         laserEnabled = _toggle;
+        lr.enabled = _toggle;
     }
     
     public void ToggleLaser(bool _toggle, Vector3 _direction)
@@ -28,6 +29,7 @@ public class LaserHandler : MonoBehaviour
         laserDirection = _direction;
     }
 
+    
 
     // Update is called once per frame
     void Update()

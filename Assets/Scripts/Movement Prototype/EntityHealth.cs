@@ -5,11 +5,18 @@ using UnityEngine;
 public class EntityHealth : MonoBehaviour
 {
     [SerializeField] private IntReference _currentHealth;
+    [SerializeField] private GameObject hitEffectPrefab;
     //we can move this to a int scriptable object if needed
     private int _maxHealth;
 
+    public void HitFeedback(Transform _hitArea)
+    {
+        
+    }
+
     public void DamageEntity(int amount)
     {
+        
         if (!WillKillEntity(amount))
         {
             int health = _currentHealth.Value;
@@ -36,6 +43,8 @@ public class EntityHealth : MonoBehaviour
             _currentHealth.SetValue(health);
         }
     }
+
+
 
     private bool WillKillEntity(int amount)
     {
