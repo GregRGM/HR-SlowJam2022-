@@ -11,6 +11,8 @@ public class LaserHandler : MonoBehaviour
     [SerializeField] private float timeUntilNextDamageTick = .2f;
     private Vector3 laserDirection;
     // Start is called before the first frame update
+
+    [SerializeField] private GameObject laserHitEffect;
     void Start()
     {
         lr = GetComponent<LineRenderer>();
