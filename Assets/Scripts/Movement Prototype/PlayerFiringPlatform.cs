@@ -21,6 +21,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     private Vector3 mouseWorldPosition;
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private LayerMask ignoreLayer;
+    [SerializeField] private bool isFiring;
 
     [SerializeField] private float fireballShotRate = 60, spreadShotRate = 30, laserHitRate = 1f;
 
@@ -58,7 +59,7 @@ public class PlayerFiringPlatform : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             //time += Time.deltaTime;
 
