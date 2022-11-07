@@ -1911,8 +1911,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isFiring: 0
-  fireballShotRate: 0.05
-  spreadShotRate: 0.3
+  fireballShotRate: 5
+  spreadShotRate: 3
   laserHitRate: 1
   weaponSelection: 0
   fireballShotSFX: {fileID: 8300000, guid: 11e3cca7f416c094388d52815f5ed1f2, type: 3}
