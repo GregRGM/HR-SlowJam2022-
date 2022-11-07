@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 446652986}
   - component: {fileID: 446652988}
   - component: {fileID: 446652987}
+  - component: {fileID: 446652989}
   m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
@@ -458,6 +459,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446652985}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &446652989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446652985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c982441287a24d479bdcb03eb8e7f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashTime: 0.15
+  flashAmount: 1
 --- !u!1 &468010068
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +972,7 @@ GameObject:
   - component: {fileID: 661330979}
   - component: {fileID: 661330978}
   - component: {fileID: 661330982}
+  - component: {fileID: 661330983}
   m_Layer: 0
   m_Name: Meany Bo Beany
   m_TagString: Untagged
@@ -1062,8 +1079,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth:
     UseConstant: 1
-    ConstantValue: 50
+    ConstantValue: 500
     Variable: {fileID: 0}
+  hitEffectPrefab: {fileID: 0}
+  meshRenderer: {fileID: 661330979}
+  flashMaterial: {fileID: 661330983}
+--- !u!114 &661330983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661330977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c982441287a24d479bdcb03eb8e7f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashTime: 0.15
+  flashAmount: 1
 --- !u!1 &666505909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1422,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986965366}
-  m_LocalRotation: {x: -0.0011596209, y: 0.676402, z: 0.0010649516, w: 0.73653096}
+  m_LocalRotation: {x: -0.0011596209, y: 0.6764021, z: 0.001064952, w: 0.73653096}
   m_LocalPosition: {x: 9.87, y: 17.02, z: 90.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1873,8 +1908,8 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
-  fireballShotRate: 60
-  spreadShotRate: 30
+  fireballShotRate: 30
+  spreadShotRate: 15
   laserHitRate: 1
   weaponSelection: 0
 --- !u!1 &1321474582
@@ -2689,7 +2724,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918164673}
-  m_LocalRotation: {x: -0.0011596209, y: 0.676402, z: 0.0010649516, w: 0.73653096}
+  m_LocalRotation: {x: -0.0011596209, y: 0.6764021, z: 0.001064952, w: 0.73653096}
   m_LocalPosition: {x: 9.87, y: 17.02, z: 90.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

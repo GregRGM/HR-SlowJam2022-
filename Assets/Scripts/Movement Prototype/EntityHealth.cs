@@ -6,21 +6,43 @@ public class EntityHealth : MonoBehaviour
 {
     [SerializeField] private IntReference _currentHealth;
     [SerializeField] private GameObject hitEffectPrefab;
+    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private FlashMaterial flashMaterial;
+    
+
     //we can move this to a int scriptable object if needed
     private int _maxHealth;
 
+
+    private void Awake()
+    {
+        if(flashMaterial == null)
+            flashMaterial = GetComponent<FlashMaterial>();
+    }
+
+    public void HitFeedback()
+    {
+        if (flashMaterial != null && meshRenderer != null)
+            flashMaterial.FlashStart();
+
+    }
     public void HitFeedback(Transform _hitArea)
     {
-        
+        if (flashMaterial != null && meshRenderer != null)
+            flashMaterial.FlashStart();
+
     }
 
     public void DamageEntity(int amount)
     {
+        HitFeedback();
         
         if (!WillKillEntity(amount))
         {
             int health = _currentHealth.Value;
             health -= amount;
+
+            Debug.Log(gameObject.name + "took " + amount + " damage!");
             _currentHealth.SetValue(health);
         }
         else

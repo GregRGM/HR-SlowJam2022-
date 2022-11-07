@@ -128,8 +128,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pSpeed: 30
+  _lifeTime: 3
   _meshDelay: 0.2
+  renderer: {fileID: 0}
   _damageAmount:
     UseConstant: 1
     ConstantValue: 10
     Variable: {fileID: 0}
+  hitFeedback: {fileID: 0}

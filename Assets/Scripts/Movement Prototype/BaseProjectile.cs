@@ -6,9 +6,9 @@ using UnityEngine;
 public class BaseProjectile : MonoBehaviour
 {
     private Rigidbody _proRB;
-    [SerializeField] private float _pSpeed;
+    [SerializeField] private float _pSpeed, _lifeTime, _meshDelay;
     [SerializeField] private MeshRenderer renderer;
-    [SerializeField] private float _meshDelay;
+    
 
     [SerializeField] private IntReference _damageAmount;
 
@@ -35,7 +35,7 @@ public class BaseProjectile : MonoBehaviour
         EntityHealth healthobj = other.GetComponent<EntityHealth>();
         if (healthobj != null)
         {
-            healthobj.DamageEntity(10);
+            healthobj.DamageEntity(_damageAmount.ConstantValue);
             Destroy(gameObject);
         }
     }
