@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c982441287a24d479bdcb03eb8e7f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashColor: {r: 1, g: 1, b: 0.98823535, a: 1}
   flashTime: 0.15
   flashAmount: 1
 --- !u!1 &666505909
@@ -1422,7 +1422,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986965366}
-  m_LocalRotation: {x: -0.0011596209, y: 0.6764021, z: 0.001064952, w: 0.73653096}
+  m_LocalRotation: {x: -0.0011596209, y: 0.676402, z: 0.0010649516, w: 0.73653096}
   m_LocalPosition: {x: 9.87, y: 17.02, z: 90.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1908,8 +1908,8 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
-  fireballShotRate: 30
-  spreadShotRate: 15
+  fireballShotRate: 15
+  spreadShotRate: 3
   laserHitRate: 1
   weaponSelection: 0
 --- !u!1 &1321474582
@@ -2724,7 +2724,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918164673}
-  m_LocalRotation: {x: -0.0011596209, y: 0.6764021, z: 0.001064952, w: 0.73653096}
+  m_LocalRotation: {x: -0.0011596209, y: 0.676402, z: 0.0010649516, w: 0.73653096}
   m_LocalPosition: {x: 9.87, y: 17.02, z: 90.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
