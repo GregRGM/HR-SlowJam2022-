@@ -27,6 +27,10 @@ public class PlayerFiringPlatform : MonoBehaviour
 
     [SerializeField] private WeaponSelection weaponSelection;
 
+    [SerializeField] AudioClip fireballShotSFX, spreadShotSFX, laserShotSFX;
+    AudioSource audioSource;
+
+
     //private float time = 0f;
 
     private void Update()
@@ -113,6 +117,11 @@ public class PlayerFiringPlatform : MonoBehaviour
 
     }
 
+    private void PlayShootSound(AudioClip _audio)
+    {
+        AudioSource.PlayClipAtPoint(_audio, transform.position);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawRay(spawnPoint.position, hitpoint.position);
@@ -120,7 +129,8 @@ public class PlayerFiringPlatform : MonoBehaviour
     private void FireShot()
     {
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
-        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));        
+        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
+        PlayShootSound(fireballShotSFX);
     }
     
     private void FireSpread()
@@ -129,6 +139,8 @@ public class PlayerFiringPlatform : MonoBehaviour
         Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
         Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up));
         Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .9f, AimDirection.y * .9f, AimDirection.z), Vector3.up));        
+        PlayShootSound(spreadShotSFX);
+
     }
 
     private void FireLaser()
@@ -136,6 +148,7 @@ public class PlayerFiringPlatform : MonoBehaviour
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
         laserObject.GetComponent<LaserHandler>().ToggleLaser(true, AimDirection);
         //Instantiate(laserProjPrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));      
+        PlayShootSound(laserShotSFX);
 
     }
 }
