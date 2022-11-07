@@ -130,9 +130,9 @@ MonoBehaviour:
   _pSpeed: 30
   _lifeTime: 3
   _meshDelay: 0.2
-  renderer: {fileID: 0}
+  meshRenderer: {fileID: 0}
   _damageAmount:
     UseConstant: 1
     ConstantValue: 10
     Variable: {fileID: 0}
-  hitFeedback: {fileID: 0}
+  hitFeedback: {fileID: 1937182735831352, guid: e125cec2cc6d4494cb09dc98b0f62c4a, type: 3}

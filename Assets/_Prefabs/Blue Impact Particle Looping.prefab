@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1937182735831352, guid: 0f03750971c5c2240a38bcff6279ad39, type: 3}
       propertyPath: m_Name
-      value: BlueImpactParticle
+      value: Blue Impact Particle Looping
       objectReference: {fileID: 0}
     - target: {fileID: 4858369363438114, guid: 0f03750971c5c2240a38bcff6279ad39, type: 3}
       propertyPath: m_RootOrder
@@ -17,15 +17,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858369363438114, guid: 0f03750971c5c2240a38bcff6279ad39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.46
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4858369363438114, guid: 0f03750971c5c2240a38bcff6279ad39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.481804
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4858369363438114, guid: 0f03750971c5c2240a38bcff6279ad39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 98.65016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4858369363438114, guid: 0f03750971c5c2240a38bcff6279ad39, type: 3}
       propertyPath: m_LocalRotation.w

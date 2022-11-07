@@ -12,7 +12,7 @@ public class LaserHandler : MonoBehaviour
     private Vector3 laserDirection;
     // Start is called before the first frame update
 
-    [SerializeField] private GameObject laserHitEffect;
+    [SerializeField] private GameObject hitFeedback;
     void Start()
     {
         lr = GetComponent<LineRenderer>();

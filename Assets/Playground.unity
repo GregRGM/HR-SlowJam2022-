@@ -1148,7 +1148,7 @@ MonoBehaviour:
   laserEnabled: 0
   damage: 1
   timeUntilNextDamageTick: 1
-  laserHitEffect: {fileID: 1937182735831352, guid: 0f03750971c5c2240a38bcff6279ad39, type: 3}
+  hitFeedback: {fileID: 0}
 --- !u!120 &666505912
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1423,7 +1423,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986965366}
-  m_LocalRotation: {x: -0.0011596209, y: 0.6764021, z: 0.001064952, w: 0.73653096}
+  m_LocalRotation: {x: -0.0011596209, y: 0.676402, z: 0.0010649516, w: 0.73653096}
   m_LocalPosition: {x: 9.87, y: 17.02, z: 90.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1909,8 +1909,8 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
-  fireballShotRate: 15
-  spreadShotRate: 3
+  fireballShotRate: 0.5
+  spreadShotRate: 0.3
   laserHitRate: 1
   weaponSelection: 0
 --- !u!1 &1321474582
@@ -2725,7 +2725,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918164673}
-  m_LocalRotation: {x: -0.0011596209, y: 0.6764021, z: 0.001064952, w: 0.73653096}
+  m_LocalRotation: {x: -0.0011596209, y: 0.676402, z: 0.0010649516, w: 0.73653096}
   m_LocalPosition: {x: 9.87, y: 17.02, z: 90.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
