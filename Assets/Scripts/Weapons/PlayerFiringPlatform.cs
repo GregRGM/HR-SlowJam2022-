@@ -1,4 +1,4 @@
-//using Ludiq.PeekCore;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +10,7 @@ enum WeaponSelection
     Spread,
     Laser
 }
-
+//using this one
 public class PlayerFiringPlatform : MonoBehaviour
 {
     [SerializeField] private LayerMask AimColliderLayerMask;
@@ -27,6 +27,8 @@ public class PlayerFiringPlatform : MonoBehaviour
 
     [SerializeField] private WeaponSelection weaponSelection;
 
+    [SerializeField] AudioClip fireballShotSFX, spreadShotSFX, laserShotSFX;
+    AudioSource audioSource;
 
     public bool useObjectpooling;
     private float time = 0f;
@@ -126,7 +128,10 @@ public class PlayerFiringPlatform : MonoBehaviour
     {
         Gizmos.DrawRay(spawnPoint.position, hitpoint.position);
     }
-
+    private void PlayShootSound(AudioClip _audio)
+    {
+        AudioSource.PlayClipAtPoint(_audio, transform.position);
+    }
 
     private void FireShot()
     {
@@ -137,10 +142,12 @@ public class PlayerFiringPlatform : MonoBehaviour
             projectile.transform.position = spawnPoint.position; //this works
             projectile.transform.rotation = Quaternion.LookRotation(AimDirection, Vector3.up); // this doesn't
             Debug.Log(AimDirection);
+            PlayShootSound(fireballShotSFX);
         }
         else
         {
             Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
+            PlayShootSound(fireballShotSFX);
         }
     }
     private void FireSpread()
@@ -161,12 +168,14 @@ public class PlayerFiringPlatform : MonoBehaviour
             projectileLeft.transform.position = spawnPoint.position;
             projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up);
             projectileLeft.SetActive(true);
+            PlayShootSound(fireballShotSFX);
         }
         else
         {
             Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
             Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up));
             Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .9f, AimDirection.y * .9f, AimDirection.z), Vector3.up));
+            PlayShootSound(fireballShotSFX);
         }
     }
     private void FireLaser()
@@ -174,12 +183,13 @@ public class PlayerFiringPlatform : MonoBehaviour
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
         laserObject.GetComponent<LaserHandler>().ToggleLaser(true, AimDirection);
         //Instantiate(laserProjPrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));      
-
+        PlayShootSound(laserShotSFX);
     }
     private void FireTimedLaser()
     {
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
         _laserHandler.gameObject.transform.rotation = Quaternion.LookRotation(AimDirection, Vector3.up);
         _laserHandler.TryShootLaser();
+        PlayShootSound(laserShotSFX);
     }
 }

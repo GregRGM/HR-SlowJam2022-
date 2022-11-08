@@ -130,7 +130,8 @@ MonoBehaviour:
   _pSpeed: 30
   _lifeTime: 3
   _meshDelay: 0.2
-  meshRenderer: {fileID: 0}
+  _renderer: {fileID: 6682956977139689271}
+  _isPooled: 1
   _damageAmount:
     UseConstant: 1
     ConstantValue: 10

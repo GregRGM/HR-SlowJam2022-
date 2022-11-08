@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//keeping this one
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class BaseProjectile : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class BaseProjectile : MonoBehaviour
 
     [SerializeField] private IntReference _damageAmount;
 
-    [SerializeField] private GameObject hitFeedback;
+    [SerializeField] private GameObject hitFeedback, damageFeedback;
     private void Awake()
     {
         _proRB = GetComponent<Rigidbody>();
@@ -51,12 +51,15 @@ public class BaseProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        GameObject hitObj = GameObject.Instantiate(hitFeedback, transform.position, transform.rotation);
+        // might make this a pooling as well lol
         if (other.gameObject.layer ==9)
         {
             EntityHealth healthobj = other.GetComponent<EntityHealth>();
             if (healthobj != null)
             {
                 healthobj.DamageEntity(_damageAmount.ConstantValue);
+                GameObject.Instantiate(damageFeedback, transform.position, transform.rotation);
             }
             if (_isPooled)
             {
