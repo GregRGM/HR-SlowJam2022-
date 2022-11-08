@@ -47,9 +47,19 @@ public class EnemyWaveHandler : MonoBehaviour
                 break;
             case WaveState.WAITING:
                 // TODO wait for enemies to die
-                
+                if (!EnemiesAreAlive())
+                {
+                    waveNumber += 1;
+
+                    waveState = WaveState.COUNTING;
+                    Debug.Log("New wave");
+                }
                 break;
         }
+    }
+
+    bool EnemiesAreAlive() {
+        return (GameObject.FindGameObjectsWithTag("Enemy").Length > 0);
     }
 
     // Code to run once the last wave is done.
@@ -70,20 +80,6 @@ public class EnemyWaveHandler : MonoBehaviour
 
         waveState = WaveState.WAITING;
 
-        StartCoroutine(CheckEnemies());
-
-        yield break;
-    }
-
-    IEnumerator CheckEnemies()
-    {
-        // TODO implement this
-        yield return new WaitForSeconds(4f);
-
-        waveNumber += 1;
-
-        waveState = WaveState.COUNTING;
-        Debug.Log("New wave");
         yield break;
     }
 
