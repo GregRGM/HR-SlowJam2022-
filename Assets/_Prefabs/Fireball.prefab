@@ -136,3 +136,4 @@ MonoBehaviour:
     ConstantValue: 10
     Variable: {fileID: 0}
   hitFeedback: {fileID: 1937182735831352, guid: e125cec2cc6d4494cb09dc98b0f62c4a, type: 3}
+  damageFeedback: {fileID: 1937182735831352, guid: f7cdd42a5ebb49f4a9a578720ddf68ff, type: 3}

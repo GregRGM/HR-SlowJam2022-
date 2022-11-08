@@ -21,7 +21,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     private Vector3 mouseWorldPosition;
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private LayerMask ignoreLayer;
-    [SerializeField] private bool isFiring;
+    private bool isFiring;
 
     [SerializeField] private float fireballShotRate = 60, spreadShotRate = 30, laserHitRate = 1f;
 
@@ -137,8 +137,10 @@ public class PlayerFiringPlatform : MonoBehaviour
     {
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
         Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
-        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up));
-        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .9f, AimDirection.y * .9f, AimDirection.z), Vector3.up));        
+        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.5f, AimDirection.y * 1.5f, AimDirection.z), Vector3.up));
+        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.3f, AimDirection.y * 1.3f, AimDirection.z), Vector3.up));
+        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .7f, AimDirection.y * .7f, AimDirection.z), Vector3.up));        
+        Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .5f, AimDirection.y * .5f, AimDirection.z), Vector3.up));        
         PlayShootSound(spreadShotSFX);
 
     }
