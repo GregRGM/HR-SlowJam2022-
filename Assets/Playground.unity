@@ -1609,11 +1609,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1186803687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed81df384a8128c44a1db73332535640, type: 3}
+  m_Script: {fileID: 11500000, guid: 872230c0293945f4cb87d4a2e90ce9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _amountToPool: 200
-  _SingleProjectilePrefab: {fileID: 1108231344063658873, guid: 7555dbb99a9051d41847a5478d885b0e, type: 3}
+  _SingleProjectilePrefab: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
 --- !u!4 &1186803689
 Transform:
   m_ObjectHideFlags: 0
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   AimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 63
-  projectilePrefab: {fileID: 1108231344063658873, guid: 7555dbb99a9051d41847a5478d885b0e, type: 3}
+  projectilePrefab: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
   laserObject: {fileID: 666505909}
   _laserHandler: {fileID: 2063602386}
   spawnPoint: {fileID: 2124910271}
@@ -3150,7 +3150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2063602384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f425d9e0a737a1f439d48494710adc61, type: 3}
+  m_Script: {fileID: 11500000, guid: d39735aa159684145931544241e69c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunRange: 50
@@ -3162,7 +3162,7 @@ MonoBehaviour:
     Variable: {fileID: 0}
   layer:
     serializedVersion: 2
-    m_Bits: 9
+    m_Bits: 0
 --- !u!120 &2063602387
 LineRenderer:
   m_ObjectHideFlags: 0
