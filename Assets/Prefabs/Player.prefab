@@ -135,14 +135,16 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
-  fireballShotRate: 0.01
-  spreadShotRate: 0.5
+  fireballShotRate: 1
+  spreadShotRate: 5
   laserHitRate: 1
   weaponSelection: 0
   fireballShotSFX: {fileID: 8300000, guid: 11e3cca7f416c094388d52815f5ed1f2, type: 3}
   spreadShotSFX: {fileID: 8300000, guid: 748c39f1644c594419e2d56271540c13, type: 3}
   laserShotSFX: {fileID: 8300000, guid: c5b2f7c64a2419d4f91219b4c28b8023, type: 3}
+  _reticleTran: {fileID: 0}
   useObjectpooling: 1
+  parent: {fileID: 0}
 --- !u!82 &3838191762678832461
 AudioSource:
   m_ObjectHideFlags: 0
