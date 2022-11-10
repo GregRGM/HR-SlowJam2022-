@@ -137,11 +137,11 @@ public class PlayerFiringPlatform : MonoBehaviour
             projectileCenter.SetActive(true);
             GameObject projectileRight = ProjectilePoolManager.instance.GetPooledSingleProjectileObj();
             projectileRight.transform.position = spawnPoint.position;
-            projectileRight.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up);
+            projectileRight.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.3f, AimDirection.y * 1.3f, AimDirection.z), Vector3.up);
             projectileRight.SetActive(true);
             GameObject projectileLeft = ProjectilePoolManager.instance.GetPooledSingleProjectileObj();
             projectileLeft.transform.position = spawnPoint.position;
-            projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up);
+            projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.3f, AimDirection.y * 1.3f, AimDirection.z), Vector3.up);
             projectileLeft.SetActive(true);
             PlayShootSound(fireballShotSFX);
         }
