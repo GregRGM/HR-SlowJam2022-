@@ -2,15 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //using UnityEngine.InputSystem;
 
-enum WeaponSelection
-{
-    Fireball,
-    Spread,
-    Laser
-}
-//using this one
 public class PlayerFiringPlatform : MonoBehaviour
 {
     [SerializeField] private LayerMask AimColliderLayerMask;
@@ -30,8 +24,18 @@ public class PlayerFiringPlatform : MonoBehaviour
     [SerializeField] AudioClip fireballShotSFX, spreadShotSFX, laserShotSFX;
     AudioSource audioSource;
 
+    [SerializeField] private RectTransform _reticleTran;
+
     public bool useObjectpooling;
     private float time = 0f;
+
+    public RectTransform parent;
+
+    private void Awake()
+    {
+        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     private void Update()
     {
@@ -42,6 +46,9 @@ public class PlayerFiringPlatform : MonoBehaviour
         {
             mouseWorldPosition = raycastHit.point;
             hitpoint.position = raycastHit.point;
+            Vector3 screenPosition = _mainCamera.WorldToScreenPoint(raycastHit.point);
+            _reticleTran.localPosition = (screenPosition - parent.position);
+
             //Debug.Log(mouseWorldPosition);
         }
 
@@ -56,26 +63,23 @@ public class PlayerFiringPlatform : MonoBehaviour
 
         if(Input.mouseScrollDelta.y < 0)
         {
-            //(int) weaponSelection -= mouseScrollDelta.y;
             if(weaponSelection < 0)
             {
                 weaponSelection = WeaponSelection.Laser;
             }
         }
-
+        //Will switch this to input system
         if (Input.GetMouseButton(0))
         {
             switch (weaponSelection)
             {
                 case WeaponSelection.Fireball:
                     {
-                        //InvokeRepeating("FireShot", 0f, 1 / fireballShotRate);
                         if (time > fireballShotRate)
                         {
                             time = 0f;
                             FireShot();
                         }
-                        //FireShot();
                     }
                     break;
                 case WeaponSelection.Spread:
@@ -85,7 +89,6 @@ public class PlayerFiringPlatform : MonoBehaviour
                             time = 0f;
                             FireSpread();
                         }
-                        //InvokeRepeating("FireSpread", 0f, 1 / spreadShotRate);
                     }
                     break;
                 case WeaponSelection.Laser:
@@ -98,35 +101,6 @@ public class PlayerFiringPlatform : MonoBehaviour
                     break;
             }
         }
-        //else if (Input.GetMouseButtonUp(0))
-        //{
-        //    switch (weaponSelection)
-        //    {
-        //        case WeaponSelection.Fireball:
-        //            {
-        //                CancelInvoke("FireShot");
-        //            }
-        //            break;
-        //        case WeaponSelection.Spread:
-        //            {
-        //                CancelInvoke("FireSpread");
-        //            }
-        //            break;
-        //        case WeaponSelection.Laser:
-        //            {
-        //                //laserObject.GetComponent<LaserHandler>().ToggleLaser(false);
-        //            }
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(spawnPoint.position, hitpoint.position);
     }
     private void PlayShootSound(AudioClip _audio)
     {
@@ -150,6 +124,7 @@ public class PlayerFiringPlatform : MonoBehaviour
             PlayShootSound(fireballShotSFX);
         }
     }
+    //This needs some work
     private void FireSpread()
     {
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
@@ -192,4 +167,10 @@ public class PlayerFiringPlatform : MonoBehaviour
         _laserHandler.TryShootLaser();
         PlayShootSound(laserShotSFX);
     }
+}
+enum WeaponSelection
+{
+    Fireball,
+    Spread,
+    Laser
 }
