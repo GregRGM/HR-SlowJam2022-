@@ -414,6 +414,138 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &698163235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 698163240}
+  - component: {fileID: 698163239}
+  - component: {fileID: 698163238}
+  - component: {fileID: 698163237}
+  - component: {fileID: 698163236}
+  m_Layer: 0
+  m_Name: Dummy player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &698163236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698163235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742993e8c040b4445bf64f75e2c6d38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AimColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  projectilePrefab: {fileID: 0}
+  laserObject: {fileID: 0}
+  _laserHandler: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  hitpoint: {fileID: 0}
+  _mainCamera: {fileID: 0}
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  fireballShotRate: 60
+  spreadShotRate: 30
+  laserHitRate: 1
+  weaponSelection: 0
+  fireballShotSFX: {fileID: 0}
+  spreadShotSFX: {fileID: 0}
+  laserShotSFX: {fileID: 0}
+  _reticleTran: {fileID: 0}
+  useObjectpooling: 0
+  parent: {fileID: 0}
+--- !u!65 &698163237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698163235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &698163238
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698163235}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &698163239
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698163235}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &698163240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698163235}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.77, y: 1.69, z: 90.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &808709217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -590,7 +722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194393341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.55}
+  m_LocalPosition: {x: 1.24, y: 0, z: 0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,6 +742,7 @@ GameObject:
   - component: {fileID: 1409940393}
   - component: {fileID: 1409940392}
   - component: {fileID: 1409940391}
+  - component: {fileID: 1409940396}
   m_Layer: 0
   m_Name: Enemy Tester
   m_TagString: Untagged
@@ -634,6 +767,8 @@ MonoBehaviour:
   _vertices: 7
   _radius: 2.8
   _shotSound: {fileID: 8300000, guid: cc4a84fe5af8f4647af8897528fc589e, type: 3}
+  IsBurst: 1
+  _fireRate: 3
 --- !u!136 &1409940392
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -714,6 +849,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -80.08, z: 0}
+--- !u!114 &1409940396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409940390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88593e36b2765647a10e7fce7b63e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackType: {fileID: 1409940391}
+  _AttackDelay: 4
+  time: 0
+  canAttack: 0
+  _targetingStyle: 1
+  _WeaponOrigin: {fileID: 1194393342}
 --- !u!1 &2079737250
 GameObject:
   m_ObjectHideFlags: 0

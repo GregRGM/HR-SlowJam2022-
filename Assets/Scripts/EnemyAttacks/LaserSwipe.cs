@@ -17,6 +17,7 @@ public class LaserSwipe : MonoBehaviour
     [SerializeField] private LayerMask _playerLayer;
 
     [SerializeField] private int _damagePerCollision;
+    [SerializeField] private float _radius;
 
     private List<EntityHealth> DamagedDuringray = new List<EntityHealth>();
 
@@ -98,7 +99,18 @@ public class LaserSwipe : MonoBehaviour
         //    Debugpoint.transform.position = hit.point;
         //}
         //Need to make this a spherecast
-        bool DidHitPlayer = Physics.Raycast(_originPos.position, AimDirection, out hit,999f, _playerLayer);
+        //bool DidHitPlayer = Physics.Raycast(_originPos.position, AimDirection, out hit,999f, _playerLayer);
+        //if (DidHitPlayer)
+        //{
+        //    Debug.Log("Hit Player");
+        //    EntityHealth healthObj = hit.collider.gameObject.GetComponent<EntityHealth>();
+        //    if (healthObj != null && !DamagedDuringray.Contains(healthObj))
+        //    {
+        //        healthObj.DamageEntity(_damagePerCollision);
+        //        DamagedDuringray.Add(healthObj);
+        //    }
+        //}
+        bool DidHitPlayer = Physics.SphereCast(_originPos.position, _radius, AimDirection, out hit, 999f, _playerLayer);
         if (DidHitPlayer)
         {
             Debug.Log("Hit Player");

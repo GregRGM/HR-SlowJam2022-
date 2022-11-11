@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleBurst : MonoBehaviour
+public class CircleBurst : BaseAttack
 {
     [Header("References")]
     [SerializeField] private GameObject _projectilePrefab;
@@ -19,6 +19,21 @@ public class CircleBurst : MonoBehaviour
 
     public bool IsBurst = true;
 
+    [SerializeField] private float _fireRate;
+    private float time = 10f;
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+    }
+    public override void FireAttack()
+    {
+        if (time > _fireRate)
+        {
+            time = 0f;
+            ShootBurst();
+        }
+    }
 
     private List<Vector3> _spawnPoints = new List<Vector3>();
 
