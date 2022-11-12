@@ -3696,7 +3696,7 @@ PrefabInstance:
       objectReference: {fileID: 2035154610}
     - target: {fileID: 3838191762678832462, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: laserHitRate
-      value: 0.01
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832462, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: spreadShotRate
@@ -3704,7 +3704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832462, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: fireballShotRate
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
