@@ -8,7 +8,7 @@ public class SingleFire : BaseAttack
     [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private Transform _SpawnOrigin;
 
-    [SerializeField] AudioClip fireballShotSFX, spreadShotSFX, laserShotSFX;
+    [SerializeField] AudioClip fireballShotSFX;
     AudioSource audioSource;
     [SerializeField] private float _fireRate;
     private float time = 0f;
@@ -27,7 +27,7 @@ public class SingleFire : BaseAttack
     }
     public void LaunchProjectile()
     {
-        GameObject projectile = ProjectilePoolManager.instance.GetPooledSingleProjectileObj();
+        GameObject projectile = ProjectilePoolManager.instance.GetPooledEnemySingleProjectileObj();
         projectile.transform.position = _SpawnOrigin.position;
         projectile.transform.rotation = Quaternion.LookRotation(_SpawnOrigin.forward, Vector3.up);
         PlayShootSound(fireballShotSFX);

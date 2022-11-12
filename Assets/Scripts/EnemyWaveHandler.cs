@@ -74,7 +74,7 @@ public class EnemyWaveHandler : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.enemy, _wave.spawnPoints);
+            SpawnEnemy(_wave.GetRandomEnemy(), _wave.GetRandomSpawnPoint());
             yield return new WaitForSeconds(1f/_wave.rate);
         }
 
@@ -83,9 +83,9 @@ public class EnemyWaveHandler : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy(GameObject _enemy, SpawnPoint[] points) 
+    void SpawnEnemy(GameObject _enemy, SpawnPoint point) 
     {
         Debug.Log("Spawning enemy");
-        points[Random.Range(0,points.Length)].Spawn(_enemy);
+        point.Spawn(_enemy);
     }
 }

@@ -112,7 +112,7 @@ public class PlayerFiringPlatform : MonoBehaviour
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
         if (useObjectpooling)
         {
-            GameObject projectile = ProjectilePoolManager.instance.GetPooledSingleProjectileObj();
+            GameObject projectile = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectile.transform.position = spawnPoint.position; //this works
             projectile.transform.rotation = Quaternion.LookRotation(AimDirection, Vector3.up); // this doesn't
             Debug.Log(AimDirection);
@@ -131,15 +131,15 @@ public class PlayerFiringPlatform : MonoBehaviour
         if (useObjectpooling)
         {
             //revisit angled stuff not important right now sorta works kinda got alot of junk in the trunk - SG
-            GameObject projectileCenter = ProjectilePoolManager.instance.GetPooledSingleProjectileObj();
+            GameObject projectileCenter = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectileCenter.transform.position = spawnPoint.position;
             projectileCenter.transform.rotation = Quaternion.LookRotation(AimDirection, Vector3.up);
             projectileCenter.SetActive(true);
-            GameObject projectileRight = ProjectilePoolManager.instance.GetPooledSingleProjectileObj();
+            GameObject projectileRight = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectileRight.transform.position = spawnPoint.position;
             projectileRight.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.3f, AimDirection.y * 1.3f, AimDirection.z), Vector3.up);
             projectileRight.SetActive(true);
-            GameObject projectileLeft = ProjectilePoolManager.instance.GetPooledSingleProjectileObj();
+            GameObject projectileLeft = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectileLeft.transform.position = spawnPoint.position;
             projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.3f, AimDirection.y * 1.3f, AimDirection.z), Vector3.up);
             projectileLeft.SetActive(true);

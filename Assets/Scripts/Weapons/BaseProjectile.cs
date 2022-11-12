@@ -33,13 +33,13 @@ public class BaseProjectile : MonoBehaviour
         _proRB.velocity = transform.forward * _pSpeed;
         yield return new WaitForSeconds(_meshDelay);
         _renderer.enabled = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(_lifeTime);
         if (_isPooled)
         {
             Debug.Log("I stopped bitch");
             _proRB.velocity = Vector3.zero;
             StopAllCoroutines();
-            ProjectilePoolManager.instance.ReturnSingleProjectile(this.gameObject);
+            ProjectilePoolManager.instance.ReturnPlayerSingleProjectile(this.gameObject);
             //gameObject.SetActive(false);
         }
         else
@@ -65,7 +65,7 @@ public class BaseProjectile : MonoBehaviour
             {
                 _proRB.velocity = Vector3.zero;
                 StopAllCoroutines();
-                ProjectilePoolManager.instance.ReturnSingleProjectile(this.gameObject);
+                ProjectilePoolManager.instance.ReturnPlayerSingleProjectile(this.gameObject);
             }
             else
             {

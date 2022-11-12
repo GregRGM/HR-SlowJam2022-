@@ -6,11 +6,14 @@ public class ProjectilePoolManager : MonoBehaviour
 {
     public static ProjectilePoolManager instance;
 
-    private Queue<GameObject> pooledSingleProjectileObjects = new Queue<GameObject>();
+    private Queue<GameObject> pooledSinglePlayerProjectileObjects = new Queue<GameObject>();
+    private Queue<GameObject> pooledSingleEnemyProjectileObjects = new Queue<GameObject>();
     //I can make this serialized if this needs to be adjusted
-    [SerializeField] private int _amountToPool = 200;
+    [SerializeField] private int _amountToPoolPlayer = 100;
+    [SerializeField] private int _amountToPoolEnemy = 100;
 
-    [SerializeField] private GameObject _SingleProjectilePrefab;
+    [SerializeField] private GameObject _SinglePlayerProjectile;
+    [SerializeField] private GameObject _SingleEnemyProjectile;
 
     private void Awake()
     {
@@ -22,32 +25,59 @@ public class ProjectilePoolManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < _amountToPool; i++)
+        for (int i = 0; i < _amountToPoolPlayer; i++)
         {
-            GameObject obj = Instantiate(_SingleProjectilePrefab);
+            GameObject obj = Instantiate(_SinglePlayerProjectile);
             obj.SetActive(false);
-            pooledSingleProjectileObjects.Enqueue(obj);
+            pooledSinglePlayerProjectileObjects.Enqueue(obj);
+        }
+        for (int i = 0; i < _amountToPoolEnemy; i++)
+        {
+            GameObject obj = Instantiate(_SingleEnemyProjectile);
+            obj.SetActive(false);
+            pooledSingleEnemyProjectileObjects.Enqueue(obj);
         }
     }
 
-    public GameObject GetPooledSingleProjectileObj()
+    public GameObject GetPooledPlayerSingleProjectileObj()
     {
-        if (pooledSingleProjectileObjects.Count > 0)
+        if (pooledSinglePlayerProjectileObjects.Count > 0)
         {
-            GameObject obj = pooledSingleProjectileObjects.Dequeue();
+            GameObject obj = pooledSinglePlayerProjectileObjects.Dequeue();
             obj.SetActive(true);
             return obj;
         }
         else
         {
-            GameObject obj = Instantiate(_SingleProjectilePrefab);
+            GameObject obj = Instantiate(_SinglePlayerProjectile);
             return obj;
         }
     }
 
-    public void ReturnSingleProjectile(GameObject projectile)
+    public void ReturnPlayerSingleProjectile(GameObject projectile)
     {
-        pooledSingleProjectileObjects.Enqueue(projectile);
+        pooledSinglePlayerProjectileObjects.Enqueue(projectile);
+        projectile.SetActive(false);
+    }
+
+    public GameObject GetPooledEnemySingleProjectileObj()
+    {
+        if (pooledSingleEnemyProjectileObjects.Count > 0)
+        {
+            GameObject obj = pooledSingleEnemyProjectileObjects.Dequeue();
+            obj.SetActive(true);
+            return obj;
+        }
+        else
+        {
+            GameObject obj = Instantiate(_SingleEnemyProjectile);
+            return obj;
+        }
+    }
+
+    public void ReturnEnemySingleProjectile(GameObject projectile)
+    {
+        pooledSingleEnemyProjectileObjects.Enqueue(projectile);
         projectile.SetActive(false);
     }
 }
