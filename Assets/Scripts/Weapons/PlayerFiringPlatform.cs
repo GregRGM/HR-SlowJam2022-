@@ -4,7 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 //using UnityEngine.InputSystem;
-
+enum WeaponSelection
+{
+    Fireball,
+    Spread,
+    Laser
+}
 public class PlayerFiringPlatform : MonoBehaviour
 {
     [SerializeField] private LayerMask AimColliderLayerMask;
@@ -75,15 +80,17 @@ public class PlayerFiringPlatform : MonoBehaviour
             {
                 case WeaponSelection.Fireball:
                     {
-                        if (time > fireballShotRate)
-                        {
-                            time = 0f;
-                            FireShot();
-                        }
+                        InvokeRepeating("FireShot", 0f, 1 / fireballShotRate);
+                        //if (time > fireballShotRate)
+                        //{
+                        //    time = 0f;
+                        //    FireShot();
+                        //}
                     }
                     break;
                 case WeaponSelection.Spread:
                     {
+                        InvokeRepeating("FireSpread", 0f, 1 / spreadShotRate);
                         if (time > spreadShotRate)
                         {
                             time = 0f;
@@ -95,6 +102,30 @@ public class PlayerFiringPlatform : MonoBehaviour
                     {
                         //FireLaser();
                         FireTimedLaser();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        else if (Input.GetMouseButtonUp(0))
+        {
+            switch (weaponSelection)
+            {
+                case WeaponSelection.Fireball:
+                    {
+                        CancelInvoke("FireShot");
+                    }
+                    break;
+                case WeaponSelection.Spread:
+                    {
+                        CancelInvoke("FireSpread");
+                    }
+                    break;
+                case WeaponSelection.Laser:
+                    {
+                        laserObject.GetComponent<LaserHandler>().ToggleLaser(false);
                     }
                     break;
                 default:
@@ -167,10 +198,4 @@ public class PlayerFiringPlatform : MonoBehaviour
         _laserHandler.TryShootLaser();
         PlayShootSound(laserShotSFX);
     }
-}
-enum WeaponSelection
-{
-    Fireball,
-    Spread,
-    Laser
 }
