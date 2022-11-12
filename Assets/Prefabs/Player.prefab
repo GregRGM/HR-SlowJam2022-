@@ -233,7 +233,7 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
-  fireballShotRate: 1
+  fireballShotRate: 10
   spreadShotRate: 5
   laserHitRate: 1
   weaponSelection: 0
