@@ -22,7 +22,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private LayerMask ignoreLayer;
 
-    [SerializeField] private float fireballShotRate = 60, spreadShotRate = 30, laserHitRate = 1f;
+    [SerializeField] private float fireballShotRate = 1, spreadShotRate = 30, laserHitRate = 1f;
 
     [SerializeField] private WeaponSelection weaponSelection;
 
@@ -64,6 +64,8 @@ public class PlayerFiringPlatform : MonoBehaviour
                 weaponSelection = WeaponSelection.Laser;    
             else if(weaponSelection > WeaponSelection.Laser)
                 weaponSelection = WeaponSelection.Fireball;
+
+            //TODO: Check if firing is invoking
         }
 
         if(Input.mouseScrollDelta.y < 0)
@@ -80,7 +82,9 @@ public class PlayerFiringPlatform : MonoBehaviour
             {
                 case WeaponSelection.Fireball:
                     {
-                        InvokeRepeating("FireShot", 0f, 1 / fireballShotRate);
+                        if(IsInvoking("FireShot") == false)
+                            InvokeRepeating("FireShot", 0f, 1 / fireballShotRate);
+
                         //if (time > fireballShotRate)
                         //{
                         //    time = 0f;
@@ -90,12 +94,13 @@ public class PlayerFiringPlatform : MonoBehaviour
                     break;
                 case WeaponSelection.Spread:
                     {
-                        InvokeRepeating("FireSpread", 0f, 1 / spreadShotRate);
-                        if (time > spreadShotRate)
-                        {
-                            time = 0f;
-                            FireSpread();
-                        }
+                        if (IsInvoking("FireSpread") == false)
+                            InvokeRepeating("FireSpread", 0f, 1 / spreadShotRate);
+                        //if (time > spreadShotRate)
+                        //{
+                        //    time = 0f;
+                        //    FireSpread();
+                        //}
                     }
                     break;
                 case WeaponSelection.Laser:
