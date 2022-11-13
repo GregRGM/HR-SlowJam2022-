@@ -13,11 +13,11 @@ public class SpawnPoint : MonoBehaviour
     {
         if (objectToSpawn != null) {
             Debug.Log("spawning object to spawn");
-            Instantiate(objectToSpawn, transform);
+            Instantiate(objectToSpawn, transform, false);
         }
         else if (defaultToSpawn != null) {
             Debug.Log("spawning default");
-            Instantiate(defaultToSpawn, transform);
+            Instantiate(defaultToSpawn, transform, false);
         }
     }
 }

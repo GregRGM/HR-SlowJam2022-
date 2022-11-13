@@ -23,6 +23,13 @@ public class EnemyWaveHandler : MonoBehaviour
     float waveCountdown;
     float timeRate = 1f;
 
+    public bool IsDone 
+    {
+        get 
+        {
+            return waveNumber >= waves.Length;
+        }
+    }
     private void OnEnable()
     {
         waveNumber = 0;

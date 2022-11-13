@@ -40,6 +40,14 @@ public class RoomScript : MonoBehaviour
         _Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         Debug.Log("Ended Room you can explore it now");
     }
+
+    //Upon collision with another GameObject, this GameObject will reverse direction
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!roomWaveHandler.IsDone) {
+            StartRoom();
+        }
+    }
 }
 
 public enum FreezeAxisType
