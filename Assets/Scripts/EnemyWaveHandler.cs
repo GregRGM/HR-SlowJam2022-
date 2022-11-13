@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// yeah this is based off Brackeys code
+// yeah this is based off Brackeys code 
+//we stan Brackeys - SG
 public enum WaveState {
     SPAWNING, // Spawning enemies
     WAITING, // Waiting for enemies to die
@@ -14,13 +15,15 @@ public class EnemyWaveHandler : MonoBehaviour
 {
     public Wave[] waves;
     public WaveState waveState = WaveState.COUNTING;
+
+    RoomScript _owner;
     public int nextRoomId;
     int waveNumber = 0;
     public float timeToWait = 5f;
     float waveCountdown;
     float timeRate = 1f;
 
-    void Start()
+    private void OnEnable()
     {
         waveNumber = 0;
         waveCountdown = timeToWait;
@@ -54,7 +57,7 @@ public class EnemyWaveHandler : MonoBehaviour
                     waveNumber += 1;
 
                     waveState = WaveState.COUNTING;
-                    Debug.Log("New wave");
+                    //Debug.Log("New wave");
                 }
                 break;
         }
@@ -67,18 +70,20 @@ public class EnemyWaveHandler : MonoBehaviour
     // Code to run once the last wave is done.
     void OnLastWaveClear() 
     {
+        Debug.Log("Finished this room");
         var player = GameObject.FindGameObjectsWithTag("Player").First();
-        if (player.GetComponent<RoomMovement>().currentRoom.isFinalRoom)
-        {
-            Debug.Log("Level complete!");
-        }
-        else
-        {
-            StartCoroutine(player.GetComponent<RoomMovement>().MoveToRoom(nextRoomId));
-            waveNumber = 0;
+        _owner.EndRoom();
+        //if (player.GetComponent<RoomMovement>().currentRoom.isFinalRoom)
+        //{
+        //    Debug.Log("Level complete!");
+        //}
+        //else
+        //{
+        //    //StartCoroutine(player.GetComponent<RoomMovement>().MoveToRoom(nextRoomId));
+        //    waveNumber = 0;
 
-            // TODO reset waves
-        }
+        //    // TODO reset waves
+        //}
     }
 
     IEnumerator SpawnWave(Wave _wave)
@@ -98,7 +103,12 @@ public class EnemyWaveHandler : MonoBehaviour
 
     void SpawnEnemy(GameObject _enemy, SpawnPoint point) 
     {
-        Debug.Log("Spawning enemy");
+        //Debug.Log("Spawning enemy");
         point.Spawn(_enemy);
+    }
+
+    public void SetOwner(RoomScript room)
+    {
+        _owner = room;
     }
 }
