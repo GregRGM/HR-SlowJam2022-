@@ -535,7 +535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82387168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.24240498, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2832, z: -0.0264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1453,7 +1453,7 @@ GameObject:
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 08a04b12dd0d5ec4da08f074806d5bf7, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 82387169}
   m_Follow: {fileID: 2054144109}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 52.75
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -1502,8 +1502,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467986377}
-  m_LocalRotation: {x: -0.006773882, y: 0.6739969, z: 0.006180745, w: 0.73867726}
-  m_LocalPosition: {x: 34.103996, y: 4.6658926, z: 81.215485}
+  m_LocalRotation: {x: 0.0056863273, y: 0.69153833, z: -0.005444179, w: 0.7222969}
+  m_LocalPosition: {x: 32.200005, y: 4.499999, z: 81.21549}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1788,7 +1788,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 52.75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1813,8 +1813,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582855276}
-  m_LocalRotation: {x: -0.006773882, y: 0.6739969, z: 0.006180745, w: 0.73867726}
-  m_LocalPosition: {x: 34.103996, y: 4.6658926, z: 81.215485}
+  m_LocalRotation: {x: 0.0056863273, y: 0.69153833, z: -0.005444179, w: 0.7222969}
+  m_LocalPosition: {x: 32.200005, y: 4.499999, z: 81.21549}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2226,7 +2226,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748336698}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4285,7 +4285,7 @@ MonoBehaviour:
   m_Path: {fileID: 52297925}
   m_PathPosition: 0.12129297
   m_PositionUnits: 0
-  m_PathOffset: {x: 0, y: 2, z: -5}
+  m_PathOffset: {x: 0.053858195, y: 1.8341069, z: -6.903233}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 1

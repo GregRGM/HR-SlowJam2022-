@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pSpeed: 60
   _lifeTime: 4
-  _meshDelay: 0.2
+  _meshDelay: 0.0001
   _renderer: {fileID: 6682956977139689271}
   _isPooled: 1
   _damageAmount:
