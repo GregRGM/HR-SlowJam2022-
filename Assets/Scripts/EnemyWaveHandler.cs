@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 // yeah this is based off Brackeys code
@@ -13,6 +14,7 @@ public class EnemyWaveHandler : MonoBehaviour
 {
     public Wave[] waves;
     public WaveState waveState = WaveState.COUNTING;
+    public int nextRoomId;
     int waveNumber = 0;
     public float timeToWait = 5f;
     float waveCountdown;
@@ -65,7 +67,18 @@ public class EnemyWaveHandler : MonoBehaviour
     // Code to run once the last wave is done.
     void OnLastWaveClear() 
     {
-        Debug.Log("Final wave clear! Go to next room or win game");
+        var player = GameObject.FindGameObjectsWithTag("Player").First();
+        if (player.GetComponent<RoomMovement>().currentRoom.isFinalRoom)
+        {
+            Debug.Log("Level complete!");
+        }
+        else
+        {
+            StartCoroutine(player.GetComponent<RoomMovement>().MoveToRoom(nextRoomId));
+            waveNumber = 0;
+
+            // TODO reset waves
+        }
     }
 
     IEnumerator SpawnWave(Wave _wave)
