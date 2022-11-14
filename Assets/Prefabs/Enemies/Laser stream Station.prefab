@@ -48,9 +48,9 @@ GameObject:
   - component: {fileID: 4297617118609571541}
   - component: {fileID: 2205185046921098932}
   - component: {fileID: 4850012617616439120}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laser stream Station
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

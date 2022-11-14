@@ -15,6 +15,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     [SerializeField] private LayerMask AimColliderLayerMask;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject laserObject;
+    [SerializeField] private GameObject barrierObject;
     [SerializeField] private LaserWeaponHandler _laserHandler;
     [SerializeField] private Transform spawnPoint;
     public Transform hitpoint;
@@ -22,7 +23,9 @@ public class PlayerFiringPlatform : MonoBehaviour
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private LayerMask ignoreLayer;
 
-    [SerializeField] private float fireballShotRate = 1, spreadShotRate = 30, laserHitRate = 1f;
+    [SerializeField] private float fireballShotRate = 1, spreadShotRate = 30, laserHitRate = 1f, barrierActiveTime = 1f, barrierRechargeTime = 2f;
+    [SerializeField] private bool canUseBarrier = true;
+
 
     [SerializeField] private WeaponSelection weaponSelection;
 
@@ -160,6 +163,7 @@ public class PlayerFiringPlatform : MonoBehaviour
             PlayShootSound(fireballShotSFX);
         }
     }
+
     //This needs some work
     private void FireSpread()
     {
@@ -203,4 +207,30 @@ public class PlayerFiringPlatform : MonoBehaviour
         _laserHandler.TryShootLaser();
         PlayShootSound(laserShotSFX);
     }
+
+    private void FireBarrierBlast()
+    {
+        if (canUseBarrier)
+        {
+            barrierObject.SetActive(true);
+            canUseBarrier = false;
+            Invoke("DisableBarrierBlast", barrierActiveTime);
+            //Logic to slow down player movement when activated
+        }
+    }
+
+    private void DisableBarrierBlast()
+    {
+        barrierObject.SetActive(false);
+        Invoke("RechargeBarrier", barrierRechargeTime);
+
+        //Logic to reverse player movement when deactivated
+
+    }
+
+    private void RechargeBarrier()
+    {
+        canUseBarrier = true;
+    }
+
 }
