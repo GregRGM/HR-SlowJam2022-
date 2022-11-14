@@ -15,6 +15,7 @@ public class MovementPatternEnemy : BaseEnemyController
     public float howclose;
     private float timePast;
     private bool _Increasing = true;
+    public float delayBetweenMovingToNextPoint = 0.0001f;
 
     private void OnEnable()
     {
@@ -28,7 +29,7 @@ public class MovementPatternEnemy : BaseEnemyController
         bool isCloseEnough = Vector3.Distance(transform.position, _movementPattern[_patternIndex].position) < howclose;
         if (isCloseEnough)
         {
-            GetNextPoint();
+            StartCoroutine(PointDelayCO());
         }
         LerpToNextPoint();
 
@@ -94,5 +95,12 @@ public class MovementPatternEnemy : BaseEnemyController
             return;
             //return _movementPattern[_patternIndex].transform;
         }
+    }
+
+    IEnumerator PointDelayCO()
+    {
+        yield return new WaitForSeconds(delayBetweenMovingToNextPoint);
+        GetNextPoint();
+        StopAllCoroutines();
     }
 }
