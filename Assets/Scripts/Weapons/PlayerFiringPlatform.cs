@@ -24,7 +24,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     [SerializeField] private LayerMask ignoreLayer;
 
     [SerializeField] private float fireballShotRate = 1, spreadShotRate = 30, laserHitRate = 1f, barrierActiveTime = 1f, barrierRechargeTime = 2f;
-    [SerializeField] private bool canUseBarrier = true;
+    [SerializeField] private bool canShoot = true, canUseBarrier = true;
 
 
     [SerializeField] private WeaponSelection weaponSelection;
@@ -78,9 +78,17 @@ public class PlayerFiringPlatform : MonoBehaviour
                 weaponSelection = WeaponSelection.Laser;
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            FireBarrierBlast();
+        }
+
         //Will switch this to input system
         if (Input.GetMouseButton(0))
         {
+            if (!canShoot)
+                return;
             switch (weaponSelection)
             {
                 case WeaponSelection.Fireball:
@@ -119,27 +127,8 @@ public class PlayerFiringPlatform : MonoBehaviour
 
         else if (Input.GetMouseButtonUp(0))
         {
-            switch (weaponSelection)
-            {
-                case WeaponSelection.Fireball:
-                    {
-                        CancelInvoke("FireShot");
-                    }
-                    break;
-                case WeaponSelection.Spread:
-                    {
-                        CancelInvoke("FireSpread");
-                    }
-                    break;
-                case WeaponSelection.Laser:
-                    {
-                        laserObject.GetComponent<LaserHandler>().ToggleLaser(false);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
+            StopShooting();
+        }    
     }
     private void PlayShootSound(AudioClip _audio)
     {
@@ -213,7 +202,9 @@ public class PlayerFiringPlatform : MonoBehaviour
         if (canUseBarrier)
         {
             barrierObject.SetActive(true);
+            StopShooting(); 
             canUseBarrier = false;
+            canShoot = false;
             Invoke("DisableBarrierBlast", barrierActiveTime);
             //Logic to slow down player movement when activated
         }
@@ -225,12 +216,36 @@ public class PlayerFiringPlatform : MonoBehaviour
         Invoke("RechargeBarrier", barrierRechargeTime);
 
         //Logic to reverse player movement when deactivated
-
+        canShoot = true;
     }
 
     private void RechargeBarrier()
     {
         canUseBarrier = true;
+    }
+
+    private void StopShooting()
+    {
+        switch (weaponSelection)
+        {
+            case WeaponSelection.Fireball:
+                {
+                    CancelInvoke("FireShot");
+                }
+                break;
+            case WeaponSelection.Spread:
+                {
+                    CancelInvoke("FireSpread");
+                }
+                break;
+            case WeaponSelection.Laser:
+                {
+                    //laserObject.GetComponent<LaserHandler>().ToggleLaser(false);
+                }
+                break;
+            default:
+                break;
+        }
     }
 
 }
