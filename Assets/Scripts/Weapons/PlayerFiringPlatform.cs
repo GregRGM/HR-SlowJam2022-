@@ -33,16 +33,24 @@ public class PlayerFiringPlatform : MonoBehaviour
     AudioSource audioSource;
 
     [SerializeField] private RectTransform _reticleTran;
+    [SerializeField] private Image _currentReticle;
+
+    [SerializeField] private Sprite _FireballImage;
+    [SerializeField] private Sprite _IceImage;
+    [SerializeField] private Sprite _LightningImage;
 
     public bool useObjectpooling;
     private float time = 0f;
-
+    public int _weaponIndex;
     public RectTransform parent;
 
     private void Awake()
     {
         //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        weaponSelection = WeaponSelection.Fireball;
+        _currentReticle.sprite = _FireballImage;
+        _weaponIndex = 1;
     }
 
     private void Update()
@@ -60,24 +68,35 @@ public class PlayerFiringPlatform : MonoBehaviour
             //Debug.Log(mouseWorldPosition);
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            weaponSelection += Mathf.FloorToInt(Input.GetAxis("Mouse ScrollWheel") * 10);
-            if(weaponSelection < 0)
-                weaponSelection = WeaponSelection.Laser;    
-            else if(weaponSelection > WeaponSelection.Laser)
-                weaponSelection = WeaponSelection.Fireball;
-
-            //TODO: Check if firing is invoking
+            Debug.Log("Mouse right down");
+            SwapWeapon();
         }
 
-        if(Input.mouseScrollDelta.y < 0)
-        {
-            if(weaponSelection < 0)
-            {
-                weaponSelection = WeaponSelection.Laser;
-            }
-        }
+        //if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        //{
+        //    weaponSelection += Mathf.FloorToInt(Input.GetAxis("Mouse ScrollWheel") * 10);
+        //    if(weaponSelection < 0)
+        //    {
+        //        weaponSelection = WeaponSelection.Laser;
+        //        _currentReticleSprite = _LightningImage;
+        //    } 
+        //    else if(weaponSelection > WeaponSelection.Laser)
+        //    {
+        //        weaponSelection = WeaponSelection.Fireball;
+        //        _currentReticleSprite = _FireballImage;
+        //    }
+        //    //TODO: Check if firing is invoking
+        //}
+
+        //if(Input.mouseScrollDelta.y < 0)
+        //{
+        //    if(weaponSelection < 0)
+        //    {
+        //        weaponSelection = WeaponSelection.Laser;
+        //    }
+        //}
 
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -248,4 +267,29 @@ public class PlayerFiringPlatform : MonoBehaviour
         }
     }
 
+    private void SwapWeapon()
+    {
+        Debug.Log("swapped Equipped");
+        if (_weaponIndex == 1)
+        {
+            weaponSelection = WeaponSelection.Spread;
+            _currentReticle.sprite = _IceImage;
+            _weaponIndex++;
+            Debug.Log("Ice Equipped");
+        }
+        else if (_weaponIndex == 2)
+        {
+            weaponSelection = WeaponSelection.Laser;
+            _currentReticle.sprite = _LightningImage;
+            _weaponIndex++;
+            Debug.Log("Light Equipped");
+        }
+        else if (_weaponIndex == 3)
+        {
+            weaponSelection = WeaponSelection.Fireball;
+            _currentReticle.sprite = _FireballImage;
+            _weaponIndex = 1;
+            Debug.Log("Fire Equipped");
+        }
+    }
 }

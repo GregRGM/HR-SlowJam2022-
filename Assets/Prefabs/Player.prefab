@@ -248,6 +248,10 @@ MonoBehaviour:
   spreadShotSFX: {fileID: 8300000, guid: 748c39f1644c594419e2d56271540c13, type: 3}
   laserShotSFX: {fileID: 8300000, guid: c5b2f7c64a2419d4f91219b4c28b8023, type: 3}
   _reticleTran: {fileID: 0}
+  _currentReticleSprite: {fileID: 0}
+  _FireballImage: {fileID: 21300000, guid: ce807a3a6427f8d48aab1e00eefe6256, type: 3}
+  _IceImage: {fileID: 21300000, guid: 2de8637b494dbda4280b94b0f3848196, type: 3}
+  _LightningImage: {fileID: 21300000, guid: dd9b49a69c8f6c04cbcde7b77e3297eb, type: 3}
   useObjectpooling: 1
   parent: {fileID: 0}
 --- !u!82 &3838191762678832461
