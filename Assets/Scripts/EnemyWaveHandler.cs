@@ -78,7 +78,7 @@ public class EnemyWaveHandler : MonoBehaviour
     void OnLastWaveClear() 
     {
         Debug.Log("Finished this room");
-        var player = GameObject.FindGameObjectsWithTag("Player").First();
+        //var player = GameObject.FindGameObjectsWithTag("Player").First();
         _owner.EndRoom();
         //if (player.GetComponent<RoomMovement>().currentRoom.isFinalRoom)
         //{

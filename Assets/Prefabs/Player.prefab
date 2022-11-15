@@ -226,6 +226,7 @@ MonoBehaviour:
     m_Bits: 575
   projectilePrefab: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
   laserObject: {fileID: 0}
+  barrierObject: {fileID: 0}
   _laserHandler: {fileID: 3838191762957902901}
   spawnPoint: {fileID: 3838191763030816856}
   hitpoint: {fileID: 1886027137}
@@ -236,11 +237,19 @@ MonoBehaviour:
   fireballShotRate: 10
   spreadShotRate: 5
   laserHitRate: 1
+  barrierActiveTime: 1
+  barrierRechargeTime: 2
+  canShoot: 1
+  canUseBarrier: 1
   weaponSelection: 0
   fireballShotSFX: {fileID: 8300000, guid: 11e3cca7f416c094388d52815f5ed1f2, type: 3}
   spreadShotSFX: {fileID: 8300000, guid: 748c39f1644c594419e2d56271540c13, type: 3}
   laserShotSFX: {fileID: 8300000, guid: c5b2f7c64a2419d4f91219b4c28b8023, type: 3}
   _reticleTran: {fileID: 0}
+  _currentReticleSprite: {fileID: 0}
+  _FireballImage: {fileID: 21300000, guid: ce807a3a6427f8d48aab1e00eefe6256, type: 3}
+  _IceImage: {fileID: 21300000, guid: 2de8637b494dbda4280b94b0f3848196, type: 3}
+  _LightningImage: {fileID: 21300000, guid: dd9b49a69c8f6c04cbcde7b77e3297eb, type: 3}
   useObjectpooling: 1
   parent: {fileID: 0}
 --- !u!82 &3838191762678832461
