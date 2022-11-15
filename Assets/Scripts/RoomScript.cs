@@ -27,6 +27,7 @@ public class RoomScript : MonoBehaviour
 
         _Player.GetComponent<Animator>().Play("Combat");
         _Player.GetComponent<PlayerCameraControl>().SetCameraDetails(cameraPosition, screenLookAt);
+        _Player.GetComponent<PlayerCameraControl>().SetCombatState(CombatState.COMBAT);
         if (axisToFreeze == FreezeAxisType.X)
         {
             _Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotation;
@@ -47,6 +48,8 @@ public class RoomScript : MonoBehaviour
     {
         roomWaveHandler.gameObject.SetActive(false);
         _Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+        _Player.GetComponent<PlayerCameraControl>().SetCombatState(CombatState.NAVIGATION);
 
         _Player.GetComponent<Animator>().Play("DungeonTravel3D");
         Debug.Log("Ended Room you can explore it now");
