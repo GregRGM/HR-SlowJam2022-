@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &306220817
 CanvasRenderer:
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -254,5 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872230c0293945f4cb87d4a2e90ce9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amountToPool: 200
-  _SingleProjectilePrefab: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
+  _amountToPoolPlayer: 100
+  _amountToPoolEnemy: 100
+  _SinglePlayerProjectile: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
+  _SingleEnemyProjectile: {fileID: 7698696348989764701, guid: ad5ac157156038e42b2f95974a08b5b5, type: 3}
