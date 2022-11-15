@@ -112,9 +112,11 @@ GameObject:
   - component: {fileID: 3838191762678832462}
   - component: {fileID: 3838191762678832461}
   - component: {fileID: 3838191762678832460}
+  - component: {fileID: 2054144110}
+  - component: {fileID: 2054144117}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,7 +209,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 114
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &3838191762678832462
 MonoBehaviour:
@@ -226,6 +228,7 @@ MonoBehaviour:
     m_Bits: 575
   projectilePrefab: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
   laserObject: {fileID: 0}
+  barrierObject: {fileID: 0}
   _laserHandler: {fileID: 3838191762957902901}
   spawnPoint: {fileID: 3838191763030816856}
   hitpoint: {fileID: 1886027137}
@@ -233,9 +236,13 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
-  fireballShotRate: 10
-  spreadShotRate: 5
-  laserHitRate: 1
+  fireballShotRate: 1
+  spreadShotRate: 0.5
+  laserHitRate: 6
+  barrierActiveTime: 1
+  barrierRechargeTime: 2
+  canShoot: 1
+  canUseBarrier: 1
   weaponSelection: 0
   fireballShotSFX: {fileID: 8300000, guid: 11e3cca7f416c094388d52815f5ed1f2, type: 3}
   spreadShotSFX: {fileID: 8300000, guid: 748c39f1644c594419e2d56271540c13, type: 3}
@@ -358,6 +365,39 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 0}
   meshRenderer: {fileID: 3838191763503240412}
   flashMaterial: {fileID: 3838191763503240410}
+--- !u!95 &2054144110
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838191762678832451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34bbd350610de44438e495f023ee2ddc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2054144117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838191762678832451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a4ec08059d3b646a976f35210a00e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatCam: {fileID: 0}
 --- !u!1 &3838191762957902903
 GameObject:
   m_ObjectHideFlags: 0
