@@ -101,7 +101,7 @@ public class EnemyWaveHandler : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.GetRandomEnemy(), _wave.GetRandomSpawnPoint());
+            SpawnEnemy(_wave.GetRandomEnemy(), _wave.GetNextSpawnPoint());
             yield return new WaitForSeconds(1f/_wave.rate);
         }
 
