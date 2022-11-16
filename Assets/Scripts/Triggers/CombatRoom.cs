@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Events;
 
 public class CombatRoom : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class CombatRoom : MonoBehaviour
     private GameObject _Player;
     [SerializeField] private FreezeAxisType axisToFreeze;
     [SerializeField] private CinemachineVirtualCamera RoomCamera;
+
+    [SerializeField] private UnityEvent OnRoomEnd;
+
 
     private void OnEnable()
     {
@@ -46,6 +50,7 @@ public class CombatRoom : MonoBehaviour
         roomWaveHandler.gameObject.SetActive(false);
         _Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         _Player.GetComponent<PlayerCameraFollow>().FollowPlayer();
+        OnRoomEnd.Invoke();
     }
 }
 

@@ -9,10 +9,9 @@ public class BaseProjectile : MonoBehaviour
     [SerializeField] private float _pSpeed, _lifeTime, _meshDelay;
     [SerializeField] private MeshRenderer _renderer;
     [SerializeField] private bool _isPooled;
-
     [SerializeField] private IntReference _damageAmount;
-
     [SerializeField] private GameObject hitFeedback, damageFeedback;
+
     private void Awake()
     {
         _proRB = GetComponent<Rigidbody>();
@@ -48,12 +47,22 @@ public class BaseProjectile : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         GameObject hitObj = GameObject.Instantiate(hitFeedback, transform.position, transform.rotation);
-        // might make this a pooling as well lol
-        if (other.gameObject.layer ==9)
+        if (other.gameObject.layer == 3)
+        {
+            if (_isPooled)
+            {
+                ReturnPooledObjects();
+                return;
+            }
+        }
+        // this is Ugly but its my ugly
+        bool HitEnemyWithPlayerProjectile = other.gameObject.layer == 9 && gameObject.layer == 7;
+        bool HitPlayerWithEnemyProjectile = other.gameObject.layer == 6 && gameObject.layer == 10;
+
+        if (HitEnemyWithPlayerProjectile || HitEnemyWithPlayerProjectile)
         {
             EntityHealth healthobj = other.GetComponent<EntityHealth>();
             if (healthobj != null)
@@ -63,14 +72,28 @@ public class BaseProjectile : MonoBehaviour
             }
             if (_isPooled)
             {
-                _proRB.velocity = Vector3.zero;
-                StopAllCoroutines();
-                ProjectilePoolManager.instance.ReturnPlayerSingleProjectile(this.gameObject);
+                ReturnPooledObjects();
             }
             else
             {
                 Destroy(gameObject);
             }
         }
+
     }
+
+    private void ReturnPooledObjects()
+    {
+        _proRB.velocity = Vector3.zero;
+        StopAllCoroutines();
+        if (gameObject.layer == 7)
+        {
+            ProjectilePoolManager.instance.ReturnPlayerSingleProjectile(this.gameObject);
+        }
+        if (gameObject.layer == 10)
+        {
+            ProjectilePoolManager.instance.ReturnEnemySingleProjectile(this.gameObject);
+        }
+    }
+    
 }

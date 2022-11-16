@@ -7,11 +7,15 @@ public class TriggerEventCaller : MonoBehaviour
 {
     [SerializeField] UnityEvent OnColliderTrigger;
 
-    [SerializeField] private LayerMask _triggerLayer;
+    [SerializeField] private int _triggerLayer;
 
     private void OnTriggerEnter(Collider other)
     {
         bool isObject = other.gameObject.layer == _triggerLayer;
-        OnColliderTrigger.Invoke();
+        if (isObject)
+        {
+            OnColliderTrigger.Invoke();
+        }
+        
     }
 }
