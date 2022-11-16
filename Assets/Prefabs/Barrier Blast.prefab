@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7396681437055239377}
   - component: {fileID: 3968830977890217959}
   - component: {fileID: 1662179971136127670}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Barrier Blast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
