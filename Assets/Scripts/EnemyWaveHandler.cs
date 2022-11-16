@@ -17,6 +17,7 @@ public class EnemyWaveHandler : MonoBehaviour
     public WaveState waveState = WaveState.COUNTING;
 
     RoomScript _owner;
+    CombatRoom _cowner;
     public int nextRoomId;
     int waveNumber = 0;
     public float timeToWait = 5f;
@@ -79,7 +80,8 @@ public class EnemyWaveHandler : MonoBehaviour
     {
         Debug.Log("Finished this room");
         //var player = GameObject.FindGameObjectsWithTag("Player").First();
-        _owner.EndRoom();
+        //_owner.EndRoom();
+        _cowner.EndRoom();
         //if (player.GetComponent<RoomMovement>().currentRoom.isFinalRoom)
         //{
         //    Debug.Log("Level complete!");
@@ -117,5 +119,9 @@ public class EnemyWaveHandler : MonoBehaviour
     public void SetOwner(RoomScript room)
     {
         _owner = room;
+    }
+    public void SetCombatOwner(CombatRoom room)
+    {
+        _cowner = room;
     }
 }
