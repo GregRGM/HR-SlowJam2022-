@@ -492,8 +492,8 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
-  fireballShotRate: 1
-  spreadShotRate: 0.5
+  fireballShotRate: 20
+  spreadShotRate: 10
   laserHitRate: 6
   barrierActiveTime: 1
   barrierRechargeTime: 2
