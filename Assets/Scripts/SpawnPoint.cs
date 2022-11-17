@@ -22,4 +22,16 @@ public class SpawnPoint : MonoBehaviour
             Instantiate(defaultToSpawn, transform.position, Quaternion.identity);
         }
     }
+
+    public void SpawnPatternEnemy(GameObject? objectToSpawn, List<Transform> pattern)
+    {
+        GameObject obj = Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+        MovementPatternEnemy Pattern = obj.GetComponent<MovementPatternEnemy>();
+        bool isPatternEnemy = Pattern != null;
+        if (!isPatternEnemy)
+        {
+            return;
+        }
+        Pattern.IntializeEnemy(pattern);
+    }
 }

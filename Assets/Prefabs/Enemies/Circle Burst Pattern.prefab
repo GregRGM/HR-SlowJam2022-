@@ -169,7 +169,7 @@ MonoBehaviour:
   _AttackDelay: 4
   time: 0
   canAttack: 0
-  _targetingStyle: 0
+  _targetingStyle: 1
   _WeaponOrigin: {fileID: 1615198454348641992}
   _moveSpeed: 1000
   _movementPattern: []

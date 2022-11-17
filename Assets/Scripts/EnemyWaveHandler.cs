@@ -101,7 +101,7 @@ public class EnemyWaveHandler : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.GetRandomEnemy(), _wave.GetNextSpawnPoint());
+            SpawnEnemy(_wave.GetRandomEnemy(), _wave.GetNextSpawnPoint(), _wave.GetPatrolPattern().pattern);
             yield return new WaitForSeconds(1f/_wave.rate);
         }
 
@@ -110,10 +110,19 @@ public class EnemyWaveHandler : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy(GameObject _enemy, SpawnPoint point) 
+    void SpawnEnemy(GameObject _enemy, SpawnPoint point, List<Transform> pattern) 
     {
         //Debug.Log("Spawning enemy");
-        point.Spawn(_enemy);
+        MovementPatternEnemy obj = _enemy.GetComponent<MovementPatternEnemy>();
+        if (obj!=null)
+        {
+            point.SpawnPatternEnemy(_enemy, pattern);
+        }
+        else
+        {
+            point.Spawn(_enemy);
+        }
+        
     }
 
     public void SetOwner(RoomScript room)

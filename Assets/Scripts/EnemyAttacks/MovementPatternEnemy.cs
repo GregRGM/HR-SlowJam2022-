@@ -103,4 +103,11 @@ public class MovementPatternEnemy : BaseEnemyController
         GetNextPoint();
         StopAllCoroutines();
     }
+
+    // Assumes the caller is ensuring the gameobject is a player
+    public void IntializeEnemy(List<Transform> newpattern)
+    {
+        _movementPattern.Clear();
+        _movementPattern = newpattern;
+    }
 }

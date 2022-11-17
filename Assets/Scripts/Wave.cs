@@ -8,11 +8,13 @@ public class Wave : MonoBehaviour
 {
     public SpawnPoint[] spawnPoints;
     public GameObject[] enemys;
+    [Tooltip("Places to move between")]
+    public PatrolPattern[] patrols;
     [Tooltip("Number to spawn")]
     public int count;
     [Tooltip("Time between spawns")]
     public float rate;
-
+    public bool isStackingWave;
     private int spawnIndex;
 
     public GameObject GetRandomEnemy()
@@ -31,12 +33,23 @@ public class Wave : MonoBehaviour
         if (spawnIndex == spawnPoints.Length)
         {
             spawnIndex = 0;
-            Debug.Log("I failed you");
             return spawnPoints[spawnIndex];
         }
         SpawnPoint savedpoint = spawnPoints[spawnIndex];
         spawnIndex++;
-        Debug.Log("I failed you");
         return savedpoint;
     }
+
+    public PatrolPattern GetPatrolPattern()
+    {
+        int t = UnityEngine.Random.RandomRange(0, patrols.Length);
+        PatrolPattern newpattern = patrols[t];
+        return newpattern;
+    }
+}
+
+[Serializable]
+public class PatrolPattern
+{
+    public List<Transform> pattern = new List<Transform>();
 }
