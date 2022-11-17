@@ -499,6 +499,7 @@ MonoBehaviour:
   barrierRechargeTime: 2
   canShoot: 1
   canUseBarrier: 1
+  AddedRotation: {x: 30, y: 30, z: 0}
   weaponSelection: 0
   fireballShotSFX: {fileID: 8300000, guid: 11e3cca7f416c094388d52815f5ed1f2, type: 3}
   spreadShotSFX: {fileID: 8300000, guid: 748c39f1644c594419e2d56271540c13, type: 3}

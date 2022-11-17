@@ -25,7 +25,8 @@ public class PlayerFiringPlatform : MonoBehaviour
 
     [SerializeField] private float fireballShotRate = 1, spreadShotRate = 30, laserHitRate = 1f, barrierActiveTime = 1f, barrierRechargeTime = 2f;
     [SerializeField] private bool canShoot = true, canUseBarrier = true;
-
+    //[SerializeField] Vector3 AddedRotation = new Vector3(10f, 10f, 0);
+    [SerializeField] float addedAngle = .3f;
 
     [SerializeField] private WeaponSelection weaponSelection;
 
@@ -51,6 +52,8 @@ public class PlayerFiringPlatform : MonoBehaviour
         weaponSelection = WeaponSelection.Fireball;
         _currentReticle.sprite = _FireballImage;
         _weaponIndex = 1;
+
+        addedAngle += 1f;
     }
 
     private void Update()
@@ -176,6 +179,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     private void FireSpread()
     {
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
+        
         if (useObjectpooling)
         {
             //revisit angled stuff not important right now sorta works kinda got alot of junk in the trunk - SG
@@ -183,21 +187,30 @@ public class PlayerFiringPlatform : MonoBehaviour
             projectileCenter.transform.position = spawnPoint.position;
             projectileCenter.transform.rotation = Quaternion.LookRotation(AimDirection, Vector3.up);
             projectileCenter.SetActive(true);
+            
             GameObject projectileRight = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectileRight.transform.position = spawnPoint.position;
-            projectileRight.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.3f, AimDirection.y * 1.3f, AimDirection.z), Vector3.up);
+            projectileRight.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * addedAngle, AimDirection.y * addedAngle, AimDirection.z), Vector3.up);
             projectileRight.SetActive(true);
+            
             GameObject projectileLeft = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectileLeft.transform.position = spawnPoint.position;
-            projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * 1.3f, AimDirection.y * 1.3f, AimDirection.z), Vector3.up);
+            projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * addedAngle, AimDirection.y * addedAngle, AimDirection.z), Vector3.up);
             projectileLeft.SetActive(true);
+
             PlayShootSound(fireballShotSFX);
         }
         else
         {
-            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
-            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up));
-            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .9f, AimDirection.y * .9f, AimDirection.z), Vector3.up));
+            //Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
+            //Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up));
+            //Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .9f, AimDirection.y * .9f, AimDirection.z), Vector3.up));
+
+            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(new Vector3(0f, 0f/*AimDirection.y*/, 0f) ) );
+            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(new Vector3(0f, -30f/*AimDirection.y*/, 0f)));
+            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(new Vector3(0f, 30f, 0f)));
+
+            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(new Vector3(0f, 45f, 0f)));
             PlayShootSound(fireballShotSFX);
         }
     }
