@@ -25,7 +25,7 @@ public class SpawnPoint : MonoBehaviour
 
     public void SpawnPatternEnemy(GameObject? objectToSpawn, List<Transform> pattern)
     {
-        GameObject obj = Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(objectToSpawn, transform.position, transform.rotation);
         MovementPatternEnemy Pattern = obj.GetComponent<MovementPatternEnemy>();
         bool isPatternEnemy = Pattern != null;
         if (!isPatternEnemy)

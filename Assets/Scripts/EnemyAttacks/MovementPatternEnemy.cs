@@ -20,6 +20,7 @@ public class MovementPatternEnemy : BaseEnemyController
     private void OnEnable()
     {
         _player = FindObjectOfType<PlayerFiringPlatform>().gameObject;
+        _patternIndex = 0;
     }
 
     private void Update()
