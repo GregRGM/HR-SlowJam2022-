@@ -10,6 +10,7 @@ public class MovementPatternEnemy : BaseEnemyController
 
     [SerializeField] private float _moveSpeed;
     [SerializeField] private List<Transform> _movementPattern = new List<Transform>();
+    [SerializeField] private bool stopsAtEndOfPattern;
 
     public int _patternIndex;
     public float howclose;
@@ -69,6 +70,10 @@ public class MovementPatternEnemy : BaseEnemyController
 
     private void GetNextPoint()
     {
+        if (stopsAtEndOfPattern && _patternIndex >= _movementPattern.Count-1)
+        {
+            return;
+        }
         if (_patternIndex < _movementPattern.Count-1 && _Increasing)
         {
             _patternIndex++;
