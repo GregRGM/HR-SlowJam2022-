@@ -249,10 +249,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -6.9999895
       objectReference: {fileID: 0}
-    - target: {fileID: 979500029656809960, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: IsBurst
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832448, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -306,48 +302,12 @@ PrefabInstance:
       value: -0.21631777
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: state
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: _airDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: grounded
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: jumpForce
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: _jumpForce
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: groundDrag
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: _groundDrag
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: airMinSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: playerHeight
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: _jumpCooldown
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838191762678832450, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: _airMultiplier
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832451, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_Name

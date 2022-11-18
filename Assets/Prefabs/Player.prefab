@@ -650,10 +650,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectilePrefab: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
   _SpawnOrigin: {fileID: 3838191763030816856}
-  _vertices: 5
-  _radius: 2
+  _vertices: 8
+  _radius: 1.5
   _shotSound: {fileID: 8300000, guid: 65d8851dfcee3e047b6c04037002bfa2, type: 3}
-  IsBurst: 1
+  IsBurst: 0
   IsPlayer: 1
   _fireRate: 10
 --- !u!1 &3838191762957902903
