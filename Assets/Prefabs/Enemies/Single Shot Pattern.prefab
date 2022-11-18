@@ -121,11 +121,11 @@ MonoBehaviour:
   canAttack: 0
   _targetingStyle: 0
   _WeaponOrigin: {fileID: 4659848205746489773}
-  _moveSpeed: 1000
+  _moveSpeed: 5000
   _movementPattern: []
   _patternIndex: 0
   howclose: 0.2
-  delayBetweenMovingToNextPoint: 0.0001
+  delayBetweenMovingToNextPoint: 0
 --- !u!114 &4922115952624895431
 MonoBehaviour:
   m_ObjectHideFlags: 0

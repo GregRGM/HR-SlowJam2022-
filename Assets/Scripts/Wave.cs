@@ -17,7 +17,7 @@ public class Wave : MonoBehaviour
     public int count;
     [Tooltip("Time between spawns")]
     public float rate;
-    public bool isStackingWave;
+    //public bool isStackingWave;
     private int spawnIndex;
 
     public GameObject GetRandomEnemy()
