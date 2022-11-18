@@ -54,6 +54,7 @@ public class PlayerFiringPlatform : MonoBehaviour
         _weaponIndex = 1;
         if(!spreadBurstLogic)
             spreadBurstLogic = GetComponent<CircleBurst>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -154,7 +155,9 @@ public class PlayerFiringPlatform : MonoBehaviour
     }
     private void PlayShootSound(AudioClip _audio)
     {
+        audioSource.Stop();
         AudioSource.PlayClipAtPoint(_audio, transform.position);
+
     }
 
     private void FireShot()
