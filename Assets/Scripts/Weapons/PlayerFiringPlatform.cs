@@ -52,8 +52,6 @@ public class PlayerFiringPlatform : MonoBehaviour
         weaponSelection = WeaponSelection.Fireball;
         _currentReticle.sprite = _FireballImage;
         _weaponIndex = 1;
-
-        addedAngle += 1f;
     }
 
     private void Update()
@@ -179,7 +177,9 @@ public class PlayerFiringPlatform : MonoBehaviour
     private void FireSpread()
     {
         Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
-        
+
+        float newAngle = addedAngle + 1;
+
         if (useObjectpooling)
         {
             //revisit angled stuff not important right now sorta works kinda got alot of junk in the trunk - SG
@@ -190,13 +190,26 @@ public class PlayerFiringPlatform : MonoBehaviour
             
             GameObject projectileRight = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectileRight.transform.position = spawnPoint.position;
-            projectileRight.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * addedAngle, AimDirection.y * addedAngle, AimDirection.z), Vector3.up);
+            projectileRight.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
             projectileRight.SetActive(true);
-            
+
+            newAngle = 1 - addedAngle;
             GameObject projectileLeft = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectileLeft.transform.position = spawnPoint.position;
-            projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * addedAngle, AimDirection.y * addedAngle, AimDirection.z), Vector3.up);
+            projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
             projectileLeft.SetActive(true);
+
+            newAngle -= addedAngle;
+            GameObject projectileLeftA = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
+            projectileLeftA.transform.position = spawnPoint.position;
+            projectileLeftA.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
+            projectileLeftA.SetActive(true);
+
+            newAngle += (addedAngle * 2) + 1;
+            GameObject projectileRightA = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
+            projectileRightA.transform.position = spawnPoint.position;
+            projectileRightA.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
+            projectileRightA.SetActive(true);
 
             PlayShootSound(fireballShotSFX);
         }
