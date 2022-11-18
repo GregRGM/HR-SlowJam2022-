@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab915ac44b6f4542a6581986b783a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pSpeed: 60
+  _pSpeed: 120
   _lifeTime: 4
   _meshDelay: 0.0001
   _renderer: {fileID: 6682956977139689271}

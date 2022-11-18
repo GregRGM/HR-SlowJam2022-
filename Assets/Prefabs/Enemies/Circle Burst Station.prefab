@@ -99,7 +99,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   _radius: 2.8
   _shotSound: {fileID: 8300000, guid: cc4a84fe5af8f4647af8897528fc589e, type: 3}
   IsBurst: 1
+  IsPlayer: 0
   _fireRate: 3
 --- !u!114 &7937161336565408270
 MonoBehaviour:
