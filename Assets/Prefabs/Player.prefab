@@ -424,25 +424,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 9
   sprintSpeed: 12
-  airMinSpeed: 7
+  airMinSpeed: 3
   _speedIncreaseMultiplier: 0
   _slopeIncreaseMultiplier: 0
-  _groundDrag: 0
-  _airDrag: 0
-  _jumpForce: 0
-  _jumpCooldown: 0
-  _airMultiplier: 0
+  _groundDrag: 8
+  _airDrag: 1
+  _jumpForce: 15
+  _jumpCooldown: 0.05
+  _airMultiplier: 1
   jumpKey: 32
   sprintKey: 304
   crouchKey: 306
-  playerHeight: 2
+  playerHeight: 2.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  grounded: 0
+  grounded: 1
   maxSlopeAngle: 40
   orientation: {fileID: 3838191763386128401}
-  state: 0
+  state: 1
   freeze: 0
   unlimited: 0
   restricted: 0
