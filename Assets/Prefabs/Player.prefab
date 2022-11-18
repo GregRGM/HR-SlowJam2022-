@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 3838191762678832461}
   - component: {fileID: 3838191762678832460}
   - component: {fileID: 2054144125}
+  - component: {fileID: 979500029656809960}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -424,14 +425,13 @@ MonoBehaviour:
   walkSpeed: 9
   sprintSpeed: 12
   airMinSpeed: 7
-  speedIncreaseMultiplier: 1
-  slopeIncreaseMultiplier: 1
-  groundDrag: 8
-  jumpForce: 9
-  jumpCooldown: 0.25
-  airMultiplier: 1
-  crouchSpeed: 3.5
-  crouchYScale: 0.5
+  _speedIncreaseMultiplier: 0
+  _slopeIncreaseMultiplier: 0
+  _groundDrag: 0
+  _airDrag: 0
+  _jumpForce: 0
+  _jumpCooldown: 0
+  _airMultiplier: 0
   jumpKey: 32
   sprintKey: 304
   crouchKey: 306
@@ -443,11 +443,6 @@ MonoBehaviour:
   maxSlopeAngle: 40
   orientation: {fileID: 3838191763386128401}
   state: 0
-  sliding: 0
-  crouching: 0
-  wallrunning: 0
-  climbing: 0
-  vaulting: 0
   freeze: 0
   unlimited: 0
   restricted: 0
@@ -499,8 +494,9 @@ MonoBehaviour:
   barrierRechargeTime: 2
   canShoot: 1
   canUseBarrier: 1
-  AddedRotation: {x: 30, y: 30, z: 0}
+  addedAngle: 0.3
   weaponSelection: 0
+  spreadBurstLogic: {fileID: 0}
   fireballShotSFX: {fileID: 8300000, guid: 11e3cca7f416c094388d52815f5ed1f2, type: 3}
   spreadShotSFX: {fileID: 8300000, guid: 748c39f1644c594419e2d56271540c13, type: 3}
   laserShotSFX: {fileID: 8300000, guid: c5b2f7c64a2419d4f91219b4c28b8023, type: 3}
@@ -640,6 +636,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerFollowCam: {fileID: 441485721}
+--- !u!114 &979500029656809960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838191762678832451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205e9a0b9314d2e4b98fbc9725f5f5df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
+  _SpawnOrigin: {fileID: 3838191763030816856}
+  _vertices: 5
+  _radius: 2
+  _shotSound: {fileID: 8300000, guid: 65d8851dfcee3e047b6c04037002bfa2, type: 3}
+  IsBurst: 1
+  IsPlayer: 1
+  _fireRate: 10
 --- !u!1 &3838191762957902903
 GameObject:
   m_ObjectHideFlags: 0

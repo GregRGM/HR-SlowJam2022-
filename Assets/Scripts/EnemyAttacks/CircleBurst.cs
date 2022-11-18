@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class CircleBurst : BaseAttack
@@ -8,8 +9,7 @@ public class CircleBurst : BaseAttack
     [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private Transform _SpawnOrigin;
  
-    [Header("Variables")]
-    
+    [Header("Variables")]    
     [SerializeField] [Range(3, 15)] private int _vertices = 3;
     [SerializeField] [Range(0.5f, 4f)] private float _radius = 4f;
     const float TAU = 6.283185307179586f;
@@ -17,7 +17,7 @@ public class CircleBurst : BaseAttack
     [Header("Feedback")]
     [SerializeField] private AudioClip _shotSound;
 
-    public bool IsBurst = true;
+    public bool IsBurst = true, IsPlayer = false;
 
     [SerializeField] private float _fireRate;
     private float time = 10f;
@@ -57,14 +57,25 @@ public class CircleBurst : BaseAttack
 
     private void SpawnSpreadProjectilesAtPoints()
     {
+        GameObject projectile = ProjectilePoolManager.instance.GetPooledEnemySingleProjectileObj();
+
+        //Fire Projectile directly from Spawn Origin
+        if (IsPlayer)
+            projectile = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
+        
+        projectile.transform.position = _SpawnOrigin.position;
+        //aiming forward
+        projectile.transform.rotation = Quaternion.LookRotation(_SpawnOrigin.forward, Vector3.up);
+
         foreach (var point in _spawnPoints)
-        {
-            GameObject projectile = ProjectilePoolManager.instance.GetPooledEnemySingleProjectileObj();
+        {   
             projectile.transform.position = point;
             //aiming forward
             projectile.transform.rotation = Quaternion.LookRotation(_SpawnOrigin.forward, Vector3.up);
             PlayShootSound(_shotSound);
         }
+
+
     }
 
     private void SpawnBurstProjectilesAtPoints()

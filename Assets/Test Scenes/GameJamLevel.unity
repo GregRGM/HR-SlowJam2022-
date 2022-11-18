@@ -13426,6 +13426,7 @@ MonoBehaviour:
   _radius: 2
   _shotSound: {fileID: 8300000, guid: 65d8851dfcee3e047b6c04037002bfa2, type: 3}
   IsBurst: 1
+  IsPlayer: 1
   _fireRate: 10
 --- !u!4 &2078806725 stripped
 Transform:
