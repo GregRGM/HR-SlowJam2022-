@@ -348,6 +348,10 @@ PrefabInstance:
       propertyPath: _currentReticle
       value: 
       objectReference: {fileID: 2132594690}
+    - target: {fileID: 3838191762678832462, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
+      propertyPath: spreadBurstLogic
+      value: 
+      objectReference: {fileID: 2053390510}
     - target: {fileID: 3838191762678832463, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_Drag
       value: 0
@@ -11521,6 +11525,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1798209986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3838191762678832451, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
+  m_PrefabInstance: {fileID: 49405165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1810506024
 GameObject:
   m_ObjectHideFlags: 0
@@ -13397,6 +13406,30 @@ Transform:
 --- !u!4 &2053390502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3838191762678832448, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
+  m_PrefabInstance: {fileID: 49405165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2053390510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798209986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205e9a0b9314d2e4b98fbc9725f5f5df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 1108231344063658873, guid: 09792bfcadd958c4fa054c210c71eeb6, type: 3}
+  _SpawnOrigin: {fileID: 2078806725}
+  _vertices: 5
+  _radius: 2
+  _shotSound: {fileID: 8300000, guid: 65d8851dfcee3e047b6c04037002bfa2, type: 3}
+  IsBurst: 1
+  _fireRate: 10
+--- !u!4 &2078806725 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3838191763030816856, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
   m_PrefabInstance: {fileID: 49405165}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2079528508

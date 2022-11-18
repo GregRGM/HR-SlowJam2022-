@@ -29,7 +29,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     [SerializeField] float addedAngle = .3f;
 
     [SerializeField] private WeaponSelection weaponSelection;
-
+    [SerializeField] private CircleBurst spreadBurstLogic;
     [SerializeField] AudioClip fireballShotSFX, spreadShotSFX, laserShotSFX;
     AudioSource audioSource;
 
@@ -52,6 +52,8 @@ public class PlayerFiringPlatform : MonoBehaviour
         weaponSelection = WeaponSelection.Fireball;
         _currentReticle.sprite = _FireballImage;
         _weaponIndex = 1;
+        if(!spreadBurstLogic)
+            spreadBurstLogic = GetComponent<CircleBurst>();
     }
 
     private void Update()
@@ -180,7 +182,11 @@ public class PlayerFiringPlatform : MonoBehaviour
 
         float newAngle = addedAngle + 1;
 
-        if (useObjectpooling)
+        if(spreadBurstLogic != null)
+        {
+            spreadBurstLogic.ShootBurst();
+        }
+        else if (useObjectpooling)
         {
             //revisit angled stuff not important right now sorta works kinda got alot of junk in the trunk - SG
             GameObject projectileCenter = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
@@ -210,6 +216,9 @@ public class PlayerFiringPlatform : MonoBehaviour
             projectileRightA.transform.position = spawnPoint.position;
             projectileRightA.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
             projectileRightA.SetActive(true);
+
+
+
 
             PlayShootSound(fireballShotSFX);
         }
