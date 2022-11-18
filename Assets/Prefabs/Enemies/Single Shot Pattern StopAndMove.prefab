@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6700820346999092542}
   - component: {fileID: 3519030839666101378}
   m_Layer: 9
-  m_Name: Single Shot Pattern
+  m_Name: Single Shot Pattern StopAndMove
   m_TagString: Enemy
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   _movementPattern: []
   _patternIndex: 0
   howclose: 0.2
-  delayBetweenMovingToNextPoint: 0
+  delayBetweenMovingToNextPoint: 1
 --- !u!114 &4922115952624895431
 MonoBehaviour:
   m_ObjectHideFlags: 0

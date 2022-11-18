@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1337449584825907874}
   - component: {fileID: 738403098537495131}
   m_Layer: 9
-  m_Name: Circle Burst Pattern
+  m_Name: Circle Burst Pattern StopAndMove
   m_TagString: Enemy
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   _radius: 2.8
   _shotSound: {fileID: 8300000, guid: cc4a84fe5af8f4647af8897528fc589e, type: 3}
   IsBurst: 1
+  IsPlayer: 0
   _fireRate: 3
 --- !u!114 &1615198454631166874
 MonoBehaviour:
@@ -174,8 +175,8 @@ MonoBehaviour:
   _moveSpeed: 1000
   _movementPattern: []
   _patternIndex: 0
-  howclose: 0.2
-  delayBetweenMovingToNextPoint: 0.0001
+  howclose: 0.3
+  delayBetweenMovingToNextPoint: 1
 --- !u!114 &1337449584825907874
 MonoBehaviour:
   m_ObjectHideFlags: 0
