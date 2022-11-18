@@ -6331,8 +6331,8 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 943444485}
   - {fileID: 158927821}
-  - {fileID: 1342944617}
-  - {fileID: 1911046294}
+  - {fileID: 881966689}
+  - {fileID: 1357387752}
   enemys:
   - {fileID: 626720413714846706, guid: f8f845304d1ea1543ac845eb44da7ac1, type: 3}
   - {fileID: 7693189463948946236, guid: 12e41a9d3a89bb84090f900c44c035a2, type: 3}
@@ -10919,7 +10919,7 @@ MonoBehaviour:
   - {fileID: 1911046294}
   enemys:
   - {fileID: 2458214856542839758, guid: 19306198bd209a741ba234378373e7a7, type: 3}
-  - {fileID: 626720413714846706, guid: f8f845304d1ea1543ac845eb44da7ac1, type: 3}
+  - {fileID: 6764404744151663727, guid: 883dcb51ace62d04eabb207ad091298c, type: 3}
   patrolParents:
   - {fileID: 432259258}
   - {fileID: 432259258}
@@ -19634,7 +19634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &6906810289852099280
 MeshFilter:
   m_ObjectHideFlags: 0
