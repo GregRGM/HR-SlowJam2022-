@@ -2710,6 +2710,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &465685898 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2415056135890847725, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &468232922
 GameObject:
   m_ObjectHideFlags: 0
@@ -5502,6 +5507,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943444483}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &954131838 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 756802341963674259, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &960487869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6032,6 +6042,11 @@ Transform:
   m_Father: {fileID: 202705294}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!4 &1021822772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7128021985729879518, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1025660671
 GameObject:
   m_ObjectHideFlags: 0
@@ -6325,7 +6340,21 @@ MonoBehaviour:
   enemys:
   - {fileID: 626720413714846706, guid: f8f845304d1ea1543ac845eb44da7ac1, type: 3}
   - {fileID: 7693189463948946236, guid: 12e41a9d3a89bb84090f900c44c035a2, type: 3}
-  patrols: []
+  patrols:
+  - pattern:
+    - {fileID: 2046167207}
+    - {fileID: 465685898}
+    - {fileID: 1640479883}
+    - {fileID: 2107771120}
+    - {fileID: 1349861675}
+    - {fileID: 1349861675}
+    - {fileID: 1378470404}
+    - {fileID: 1659903990}
+    - {fileID: 954131838}
+    - {fileID: 1021822772}
+    - {fileID: 2137645065}
+  - pattern:
+    - {fileID: 0}
   count: 4
   rate: 1
   isStackingWave: 0
@@ -8683,7 +8712,7 @@ GameObject:
   m_Layer: 0
   m_Name: Combat Room 2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8704,6 +8733,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1349861675 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6314752271771705126, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1357387750
 GameObject:
   m_ObjectHideFlags: 0
@@ -8898,6 +8932,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377919787}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1378470404 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5965970581337810418, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1386789049
 GameObject:
   m_ObjectHideFlags: 0
@@ -10388,6 +10427,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627167968}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1640479883 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8622334166209495700, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1649368495
 GameObject:
   m_ObjectHideFlags: 0
@@ -10516,6 +10560,11 @@ Transform:
   m_Father: {fileID: 982804240}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!4 &1659903990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2990468897600559849, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1680584724
 GameObject:
   m_ObjectHideFlags: 0
@@ -10949,9 +10998,25 @@ MonoBehaviour:
   - {fileID: 1342944617}
   - {fileID: 1911046294}
   enemys:
-  - {fileID: 4659848205465013493, guid: 7a13bda83673ae34990a6eb510a71fd3, type: 3}
+  - {fileID: 2458214856542839758, guid: 19306198bd209a741ba234378373e7a7, type: 3}
   - {fileID: 626720413714846706, guid: f8f845304d1ea1543ac845eb44da7ac1, type: 3}
   patrols:
+  - pattern:
+    - {fileID: 1149100781}
+    - {fileID: 1321264005}
+    - {fileID: 1166473337}
+    - {fileID: 1178014360}
+    - {fileID: 1955579664}
+    - {fileID: 1698549267}
+    - {fileID: 259102842}
+    - {fileID: 906006873}
+    - {fileID: 731338381}
+    - {fileID: 539574757}
+    - {fileID: 913438503}
+    - {fileID: 340000460}
+    - {fileID: 1564045043}
+    - {fileID: 1208045567}
+    - {fileID: 1951217903}
   - pattern:
     - {fileID: 1149100781}
     - {fileID: 1321264005}
@@ -13324,6 +13389,11 @@ Transform:
   m_Father: {fileID: 1527135500}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2046167207 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3676962862637378074, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2053390502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3838191762678832448, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
@@ -13637,6 +13707,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104060226}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2107771120 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 733073471401287811, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2114971089
 GameObject:
   m_ObjectHideFlags: 0
@@ -13914,6 +13989,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2137645065 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4330532006809251290, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
+  m_PrefabInstance: {fileID: 1262771286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &866931209718340183
 GameObject:
   m_ObjectHideFlags: 0
@@ -20686,7 +20766,7 @@ GameObject:
   m_Layer: 0
   m_Name: Combat Room 1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20702,7 +20782,7 @@ GameObject:
   m_Layer: 0
   m_Name: Combat Room 3
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
