@@ -8,8 +8,11 @@ public class Wave : MonoBehaviour
 {
     public SpawnPoint[] spawnPoints;
     public GameObject[] enemys;
-    [Tooltip("Places to move between")]
-    public PatrolPattern[] patrols;
+
+    // TODO change to array of gameobjects (the parent objects to wave points)
+    [Tooltip("Places to move between (as game objects that are parents of a set of points)")]
+    public GameObject[] patrolParents;
+
     [Tooltip("Number to spawn")]
     public int count;
     [Tooltip("Time between spawns")]
@@ -42,9 +45,20 @@ public class Wave : MonoBehaviour
 
     public PatrolPattern GetPatrolPattern()
     {
-        int t = UnityEngine.Random.RandomRange(0, patrols.Length);
-        PatrolPattern newpattern = patrols[t];
+
+        int t = UnityEngine.Random.RandomRange(0, patrolParents.Length);
+        PatrolPattern newpattern = GetPatrolPattern(patrolParents[t]);
         return newpattern;
+    }
+
+    public PatrolPattern GetPatrolPattern(GameObject patrolParent)
+    {
+        PatrolPattern p = new PatrolPattern();
+        foreach (Transform child in patrolParent.transform)
+        {
+            p.pattern.Add(child);
+        }
+        return p;
     }
 }
 
