@@ -121,7 +121,7 @@ MonoBehaviour:
   canAttack: 0
   _targetingStyle: 0
   _WeaponOrigin: {fileID: 4659848205746489773}
-  _moveSpeed: 1
+  _moveSpeed: 10
   _movementPattern: []
   stopsAtEndOfPattern: 0
   _patternIndex: 0

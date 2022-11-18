@@ -63,10 +63,16 @@ public class MovementPatternEnemy : BaseEnemyController
         if (_patternIndex <= _movementPattern.Count -1 && _patternIndex >=0)
         {
             timePast += Time.deltaTime;
-            float ratioComplete = timePast / (1/ _moveSpeed);
-            //float ratioComplete = (timePast / (1/ _moveSpeed)) * 10;
-            Debug.Log(gameObject.name + "'s ratioComplete is currently " + ratioComplete);
-            transform.position = Vector3.Lerp(transform.position, _movementPattern[_patternIndex].position, ratioComplete);
+            //float ratioComplete = timePast / _moveSpeed;
+            ////float ratioComplete = timePast / (1/ _moveSpeed);
+            ////float ratioComplete = (timePast / (1/ _moveSpeed)) * 10;
+            ////ratioComplete /= 2f;
+            //Debug.Log(gameObject.name + "'s ratioComplete is currently " + ratioComplete);
+            //transform.position = Vector3.Lerp(transform.position, _movementPattern[_patternIndex].position, ratioComplete);
+
+            var step = _moveSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, _movementPattern[_patternIndex].position, step);
+
         }
     }
 
