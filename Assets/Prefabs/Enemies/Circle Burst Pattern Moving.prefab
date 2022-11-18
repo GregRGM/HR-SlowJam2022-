@@ -152,6 +152,7 @@ MonoBehaviour:
   _radius: 2.8
   _shotSound: {fileID: 8300000, guid: cc4a84fe5af8f4647af8897528fc589e, type: 3}
   IsBurst: 1
+  IsPlayer: 0
   _fireRate: 3
 --- !u!114 &1615198454631166874
 MonoBehaviour:
@@ -171,8 +172,9 @@ MonoBehaviour:
   canAttack: 0
   _targetingStyle: 1
   _WeaponOrigin: {fileID: 1615198454348641992}
-  _moveSpeed: 1000
+  _moveSpeed: 1
   _movementPattern: []
+  stopsAtEndOfPattern: 0
   _patternIndex: 0
   howclose: 0.2
   delayBetweenMovingToNextPoint: 0.0001
