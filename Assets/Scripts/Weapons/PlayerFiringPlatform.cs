@@ -46,6 +46,7 @@ public class PlayerFiringPlatform : MonoBehaviour
     public RectTransform parent;
 
     public Transform spreadspawn;
+    Animator animator;
 
     private void Awake()
     {
@@ -57,6 +58,8 @@ public class PlayerFiringPlatform : MonoBehaviour
         if(!spreadBurstLogic)
             spreadBurstLogic = GetComponent<CircleBurst>();
         audioSource = GetComponent<AudioSource>();
+
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -124,6 +127,7 @@ public class PlayerFiringPlatform : MonoBehaviour
                 default:
                     break;
             }
+            animator.SetBool("shooting", true);
         }
 
         else if (Input.GetMouseButtonUp(0))
@@ -235,6 +239,7 @@ public class PlayerFiringPlatform : MonoBehaviour
             default:
                 break;
         }
+        animator.SetBool("shooting", false);
     }
 
     private void SwapWeapon()
