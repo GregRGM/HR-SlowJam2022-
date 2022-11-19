@@ -66,3 +66,17 @@ UserSettings/Layouts/default-2021.dwlt
 UserSettings/EditorUserSettings.asset
 ProjectSettings/PackageManagerSettings.asset
 Assets/ConsolePro.meta
+Assets/DebugDrawingExtension/Example.meta
+Assets/DebugDrawingExtension/Example/Example.cs
+Assets/DebugDrawingExtension/Example/Example.cs.meta
+Assets/DebugDrawingExtension/Example/Example.unity
+Assets/DebugDrawingExtension/Example/Example.unity.meta
+Assets/DebugDrawingExtension/Example/ExampleSettings.lighting
+Assets/DebugDrawingExtension/Example/ExampleSettings.lighting.meta
+Assets/DebugDrawingExtension/Example/MyDebug.cs
+Assets/DebugDrawingExtension/Example/MyDebug.cs.meta
+Assets/DebugDrawingExtension/readme.txt
+Assets/DebugDrawingExtension/readme.txt.meta
+Assets/DebugExtension.cs
+Assets/DebugExtension.cs.meta
+Assets/DebugDrawingExtension.meta
