@@ -75,10 +75,6 @@ public class CircleBurst : BaseAttack
         }
     }
 
-    private void SpawnBurstProjectilesAtPoints()
-    {
-
-    }
 
     private void PlayShootSound(AudioClip _audio)
     {
