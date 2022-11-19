@@ -35,7 +35,6 @@ public class BaseProjectile : MonoBehaviour
         yield return new WaitForSeconds(_lifeTime);
         if (_isPooled)
         {
-            //Debug.Log("I stopped bitch");
             _proRB.velocity = Vector3.zero;
             StopAllCoroutines();
             ProjectilePoolManager.instance.ReturnPlayerSingleProjectile(this.gameObject);
