@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 766904038}
   - component: {fileID: 766904039}
   m_Layer: 6
-  m_Name: Square
+  m_Name: Player Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 766904037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3838191763503240413}
@@ -244,7 +244,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d908252884932014097b65bc49e7362b, type: 3}
+  m_Sprite: {fileID: 1846651465, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 3838191762678832460}
   - component: {fileID: 2054144125}
   - component: {fileID: 979500029656809960}
+  - component: {fileID: 6906781742667597961}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -656,6 +657,26 @@ MonoBehaviour:
   IsBurst: 0
   IsPlayer: 1
   _fireRate: 10
+--- !u!95 &6906781742667597961
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838191762678832451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a8a5b81a8469194ab5ae848e41a374e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3838191762957902903
 GameObject:
   m_ObjectHideFlags: 0
