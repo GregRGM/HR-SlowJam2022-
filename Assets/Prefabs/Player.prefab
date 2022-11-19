@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 9
-  sprintSpeed: 12
+  sprintSpeed: 9
   airMinSpeed: 3
   _speedIncreaseMultiplier: 0
   _slopeIncreaseMultiplier: 0
