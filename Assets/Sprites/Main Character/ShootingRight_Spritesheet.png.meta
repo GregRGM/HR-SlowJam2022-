@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: adfcbba5f21289f48ac5bb3a3e45beb7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ShootingRight_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 156
+        width: 682
+        height: 1488
+      alignment: 9
+      pivot: {x: 0.49139243, y: 0.48290446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9125c733e7e66d74b90570efd5cec49d
+      internalID: 1846651465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingRight_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2378
+        y: 156
+        width: 705
+        height: 1488
+      alignment: 9
+      pivot: {x: 0.47526112, y: 0.47916237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be67ae668b04224b8a10fce5888bbf0
+      internalID: -1106552980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingRight_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 4175
+        y: 156
+        width: 682
+        height: 1488
+      alignment: 9
+      pivot: {x: 0.49648967, y: 0.48069468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3af868a2b3c4be40a276a9c731e56d2
+      internalID: -79057410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShootingRight_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 5977
+        y: 156
+        width: 683
+        height: 1488
+      alignment: 9
+      pivot: {x: 0.49740133, y: 0.4880723}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55248dd165891314d8541d8a4432a0fb
+      internalID: 909399450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8be704e5a1f0fa64cb0d6f212485ed0c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ShootingRight_Spritesheet_11: -1706798697
+      ShootingRight_Spritesheet_5: -913246891
+      ShootingRight_Spritesheet_2: -1106552980
+      ShootingRight_Spritesheet_17: 1383358956
+      ShootingRight_Spritesheet_7: 104009487
+      ShootingRight_Spritesheet_16: 1893816493
+      ShootingRight_Spritesheet_19: -284230123
+      ShootingRight_Spritesheet_8: 566937293
+      ShootingRight_Spritesheet_32: 1452138966
+      ShootingRight_Spritesheet_6: 909399450
+      ShootingRight_Spritesheet_9: 1046519508
+      ShootingRight_Spritesheet_23: -993474706
+      ShootingRight_Spritesheet_18: 1196754629
+      ShootingRight_Spritesheet_24: 1138983424
+      ShootingRight_Spritesheet_1: -1923811141
+      ShootingRight_Spritesheet_31: 1447395372
+      ShootingRight_Spritesheet_14: 342385986
+      ShootingRight_Spritesheet_0: 1846651465
+      ShootingRight_Spritesheet_30: 1637548576
+      ShootingRight_Spritesheet_20: 845209706
+      ShootingRight_Spritesheet_4: -79057410
+      ShootingRight_Spritesheet_25: -1909733991
+      ShootingRight_Spritesheet_13: -660340027
+      ShootingRight_Spritesheet_22: 12343039
+      ShootingRight_Spritesheet_27: -1747155104
+      ShootingRight_Spritesheet_28: 14890126
+      ShootingRight_Spritesheet_3: 1911941577
+      ShootingRight_Spritesheet_33: -1922101208
+      ShootingRight_Spritesheet_15: -799265571
+      ShootingRight_Spritesheet_29: 350052112
+      ShootingRight_Spritesheet_12: -1603920780
+      ShootingRight_Spritesheet_10: 900065636
+      ShootingRight_Spritesheet_21: -829966721
+      ShootingRight_Spritesheet_26: 8590185
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: ShootRight
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,15 +21,19 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 1846651465, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
-    - time: 0.5
+    - time: 0.125
+      value: {fileID: -1106552980, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
+    - time: 0.25
       value: {fileID: -79057410, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
-    - time: 1
+    - time: 0.375
+      value: {fileID: 909399450, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
+    - time: 0.5
       value: {fileID: -1106552980, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
     attribute: m_Sprite
     path: Mesh/Player Sprite
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 4
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -45,14 +49,16 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 1846651465, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
+    - {fileID: -1106552980, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
     - {fileID: -79057410, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
+    - {fileID: 909399450, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
     - {fileID: -1106552980, guid: adfcbba5f21289f48ac5bb3a3e45beb7, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5
+    m_StopTime: 0.625
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -71,11 +77,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 1.5
-    functionName: 
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

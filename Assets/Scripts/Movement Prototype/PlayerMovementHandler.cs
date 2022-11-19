@@ -25,7 +25,6 @@ public class PlayerMovementHandler : MonoBehaviour
     [SerializeField] private float _airMultiplier;
     bool readyToJump;
 
-
     // move over to input system
 
     [Header("Keybinds")]
@@ -59,10 +58,14 @@ public class PlayerMovementHandler : MonoBehaviour
 
     public bool restricted;
 
+    Animator animator;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        animator = GetComponent<Animator>();
 
         readyToJump = true;
     }
@@ -204,7 +207,12 @@ public class PlayerMovementHandler : MonoBehaviour
 
         // on ground
         else if (grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            animator.SetBool("isRunning", true);
+            animator.SetFloat("moveDirectionX", horizontalInput);
+            animator.SetFloat("moveDirectionZ", verticalInput);
+        }
 
         // in air
         else if (!grounded)

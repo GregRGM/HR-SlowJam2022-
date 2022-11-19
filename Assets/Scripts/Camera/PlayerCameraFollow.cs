@@ -17,4 +17,9 @@ public class PlayerCameraFollow : MonoBehaviour
     {
         CameraRoomSwitcher.SwitchCamera(PlayerFollowCam);
     }
+
+    public void RotatePlayer(GameObject obj)
+    {
+        gameObject.transform.rotation = Quaternion.LookRotation(obj.transform.forward);
+    }
 }

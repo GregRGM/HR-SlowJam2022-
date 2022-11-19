@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 //using UnityEngine.InputSystem;
-enum WeaponSelection
+public enum WeaponSelection
 {
     Fireball,
     Spread,
@@ -45,6 +45,9 @@ public class PlayerFiringPlatform : MonoBehaviour
     public int _weaponIndex;
     public RectTransform parent;
 
+    public Transform spreadspawn;
+    Animator animator;
+
     private void Awake()
     {
         //Cursor.lockState = CursorLockMode.Locked;
@@ -55,6 +58,8 @@ public class PlayerFiringPlatform : MonoBehaviour
         if(!spreadBurstLogic)
             spreadBurstLogic = GetComponent<CircleBurst>();
         audioSource = GetComponent<AudioSource>();
+
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -77,30 +82,6 @@ public class PlayerFiringPlatform : MonoBehaviour
             Debug.Log("Mouse right down");
             SwapWeapon();
         }
-
-        //if (Input.GetAxis("Mouse ScrollWheel") != 0)
-        //{
-        //    weaponSelection += Mathf.FloorToInt(Input.GetAxis("Mouse ScrollWheel") * 10);
-        //    if(weaponSelection < 0)
-        //    {
-        //        weaponSelection = WeaponSelection.Laser;
-        //        _currentReticleSprite = _LightningImage;
-        //    } 
-        //    else if(weaponSelection > WeaponSelection.Laser)
-        //    {
-        //        weaponSelection = WeaponSelection.Fireball;
-        //        _currentReticleSprite = _FireballImage;
-        //    }
-        //    //TODO: Check if firing is invoking
-        //}
-
-        //if(Input.mouseScrollDelta.y < 0)
-        //{
-        //    if(weaponSelection < 0)
-        //    {
-        //        weaponSelection = WeaponSelection.Laser;
-        //    }
-        //}
 
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -146,6 +127,7 @@ public class PlayerFiringPlatform : MonoBehaviour
                 default:
                     break;
             }
+            animator.SetBool("shooting", true);
         }
 
         else if (Input.GetMouseButtonUp(0))
@@ -181,62 +163,16 @@ public class PlayerFiringPlatform : MonoBehaviour
     //This needs some work
     private void FireSpread()
     {
-        Vector3 AimDirection = (mouseWorldPosition - spawnPoint.position).normalized;
+        Vector3 AimDirection = (mouseWorldPosition - spreadspawn.position).normalized;
 
-        float newAngle = addedAngle + 1;
 
         if(spreadBurstLogic != null)
         {
+            Quaternion Directiontowards = Quaternion.LookRotation(AimDirection, Vector3.up);
+            Quaternion standarddir = spreadspawn.rotation;
+            spreadspawn.rotation = Directiontowards;
             spreadBurstLogic.ShootBurst();
-        }
-        else if (useObjectpooling)
-        {
-            //revisit angled stuff not important right now sorta works kinda got alot of junk in the trunk - SG
-            GameObject projectileCenter = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
-            projectileCenter.transform.position = spawnPoint.position;
-            projectileCenter.transform.rotation = Quaternion.LookRotation(AimDirection, Vector3.up);
-            projectileCenter.SetActive(true);
-            
-            GameObject projectileRight = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
-            projectileRight.transform.position = spawnPoint.position;
-            projectileRight.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
-            projectileRight.SetActive(true);
-
-            newAngle = 1 - addedAngle;
-            GameObject projectileLeft = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
-            projectileLeft.transform.position = spawnPoint.position;
-            projectileLeft.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
-            projectileLeft.SetActive(true);
-
-            newAngle -= addedAngle;
-            GameObject projectileLeftA = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
-            projectileLeftA.transform.position = spawnPoint.position;
-            projectileLeftA.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
-            projectileLeftA.SetActive(true);
-
-            newAngle += (addedAngle * 2) + 1;
-            GameObject projectileRightA = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
-            projectileRightA.transform.position = spawnPoint.position;
-            projectileRightA.transform.rotation = Quaternion.LookRotation(new Vector3(AimDirection.x * newAngle, AimDirection.y * newAngle, AimDirection.z), Vector3.up);
-            projectileRightA.SetActive(true);
-
-
-
-
-            PlayShootSound(fireballShotSFX);
-        }
-        else
-        {
-            //Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(AimDirection, Vector3.up));
-            //Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * 1.1f, AimDirection.y * 1.1f, AimDirection.z), Vector3.up));
-            //Instantiate(projectilePrefab, spawnPoint.position, Quaternion.LookRotation(new Vector3(AimDirection.x * .9f, AimDirection.y * .9f, AimDirection.z), Vector3.up));
-
-            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(new Vector3(0f, 0f/*AimDirection.y*/, 0f) ) );
-            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(new Vector3(0f, -30f/*AimDirection.y*/, 0f)));
-            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(new Vector3(0f, 30f, 0f)));
-
-            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(new Vector3(0f, 45f, 0f)));
-            PlayShootSound(fireballShotSFX);
+            spreadspawn.rotation = standarddir;
         }
     }
     private void FireLaser()
@@ -303,6 +239,7 @@ public class PlayerFiringPlatform : MonoBehaviour
             default:
                 break;
         }
+        animator.SetBool("shooting", false);
     }
 
     private void SwapWeapon()
