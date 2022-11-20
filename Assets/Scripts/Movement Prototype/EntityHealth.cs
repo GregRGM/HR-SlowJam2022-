@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EntityHealth : MonoBehaviour
 {
@@ -9,9 +8,7 @@ public class EntityHealth : MonoBehaviour
     [SerializeField] private GameObject hitEffectPrefab;
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private FlashMaterial flashMaterial;
-    [SerializeField] private Image healthImage;
     
-    private const int _healthSlices = 7;
 
     //we can move this to a int scriptable object if needed
     private int _maxHealth;
@@ -19,24 +16,8 @@ public class EntityHealth : MonoBehaviour
 
     private void Awake()
     {
-        _maxHealth = _currentHealth.Value;
-        
         if(flashMaterial == null)
             flashMaterial = GetComponent<FlashMaterial>();
-    }
-
-    private void Update()
-    {
-        if (healthImage != null)
-        {
-            int health = _currentHealth.Value;
-            float healthProportion = ((float) health / _maxHealth) * _healthSlices;
-            float barsToFill = Mathf.Ceil(healthProportion);
-
-            Debug.Log(health);
-
-            healthImage.fillAmount = barsToFill / _healthSlices;
-        }
     }
 
     public void HitFeedback()
