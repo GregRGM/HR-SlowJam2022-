@@ -58,36 +58,36 @@ public class BaseProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject hitObj = GameObject.Instantiate(hitFeedback, transform.position, transform.rotation);
-        if (other.gameObject.layer == 3)
-        {
-            if (_isPooled)
-            {
-                ReturnPooledObjects();
-                return;
-            }
-        }
-        // this is Ugly but its my ugly
-        bool HitEnemyWithPlayerProjectile = other.gameObject.layer == 9 && gameObject.layer == 7;
-        bool HitPlayerWithEnemyProjectile = other.gameObject.layer == 6 && gameObject.layer == 10;
+        //GameObject hitObj = GameObject.Instantiate(hitFeedback, transform.position, transform.rotation);
+        //if (other.gameObject.layer == 3)
+        //{
+        //    if (_isPooled)
+        //    {
+        //        ReturnPooledObjects();
+        //        return;
+        //    }
+        //}
+        //// this is Ugly but its my ugly
+        //bool HitEnemyWithPlayerProjectile = other.gameObject.layer == 9 && gameObject.layer == 7;
+        //bool HitPlayerWithEnemyProjectile = other.gameObject.layer == 6 && gameObject.layer == 10;
 
-        if (HitEnemyWithPlayerProjectile || HitEnemyWithPlayerProjectile)
-        {
-            EntityHealth healthobj = other.GetComponent<EntityHealth>();
-            if (healthobj != null)
-            {
-                healthobj.DamageEntity(_damageAmount.ConstantValue);
-                GameObject.Instantiate(damageFeedback, transform.position, transform.rotation);
-            }
-            if (_isPooled)
-            {
-                ReturnPooledObjects();
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+        //if (HitEnemyWithPlayerProjectile || HitEnemyWithPlayerProjectile)
+        //{
+        //    EntityHealth healthobj = other.GetComponent<EntityHealth>();
+        //    if (healthobj != null)
+        //    {
+        //        healthobj.DamageEntity(_damageAmount.ConstantValue);
+        //        GameObject.Instantiate(damageFeedback, transform.position, transform.rotation);
+        //    }
+        //    if (_isPooled)
+        //    {
+        //        ReturnPooledObjects();
+        //    }
+        //    else
+        //    {
+        //        Destroy(gameObject);
+        //    }
+        //}
 
     }
 
@@ -102,7 +102,7 @@ public class BaseProjectile : MonoBehaviour
             bool HitEnemyWithPlayerProjectile = raycastHit.collider.gameObject.layer == 9 && gameObject.layer == 7;
             bool HitPlayerWithEnemyProjectile = raycastHit.collider.gameObject.layer == 6 && gameObject.layer == 10;
 
-            if (HitEnemyWithPlayerProjectile || HitEnemyWithPlayerProjectile)
+            if (HitEnemyWithPlayerProjectile || HitPlayerWithEnemyProjectile)
             {
                 EntityHealth healthobj = raycastHit.collider.GetComponent<EntityHealth>();
                 if (healthobj != null)

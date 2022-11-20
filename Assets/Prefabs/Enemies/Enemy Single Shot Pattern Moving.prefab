@@ -72,7 +72,7 @@ MonoBehaviour:
   _moveSpeed: 10
   _movementPattern: []
   stopsAtEndOfPattern: 0
-  _anim: {fileID: 0}
+  _anim: {fileID: 4004708756693750927}
   _patternIndex: 0
   howclose: 0.2
   delayBetweenMovingToNextPoint: 0
@@ -93,6 +93,8 @@ MonoBehaviour:
     ConstantValue: 20
     Variable: {fileID: 0}
   hitEffectPrefab: {fileID: 168632, guid: 8e5d2525ea180c046aa4492ebb386cf2, type: 3}
+  healthImage: {fileID: 0}
+  _healthSlices: 0
   _spriteRenderer: {fileID: 5830875243396361002}
   _flashSprite: {fileID: 518489385639628877}
 --- !u!114 &3519030839666101378
