@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Build Scenes/01PrimeLevel.unity
     guid: 831187d9138730a40aec954777b45168
+  - enabled: 1
+    path: Assets/Menu Assets/EndScreen.unity
+    guid: ffd305da4fa88ac4d8b46908162b287b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5aa33cce86fa768478d5ff91afa658d5, type: 2}
