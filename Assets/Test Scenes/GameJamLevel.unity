@@ -237,10 +237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5294801239056061215, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6464276856159242954, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -886,12 +882,8 @@ PrefabInstance:
       value: 0.5000002
       objectReference: {fileID: 0}
     - target: {fileID: 441485722, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 441485722, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.000005
+      value: -7.000001
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832448, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_RootOrder
@@ -899,15 +891,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832448, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 96.1
+      value: 37.07
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832448, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.65
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832448, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51.4
+      value: 46.96
       objectReference: {fileID: 0}
     - target: {fileID: 3838191762678832448, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: m_LocalRotation.w
@@ -949,17 +941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
     - target: {fileID: 3838191762678832460, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: healthImage
       value: 
       objectReference: {fileID: 1734809213}
-=======
-    - target: {fileID: 3838191762678832461, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
-      propertyPath: MinDistance
-      value: 10.913635
-      objectReference: {fileID: 0}
->>>>>>> Stashed changes
     - target: {fileID: 3838191762678832462, guid: dabead4a7f842874e90b0a2ca1d5b982, type: 3}
       propertyPath: parent
       value: 
@@ -1922,10 +1907,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -1951,24 +1932,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -2662,11 +2631,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 4
-=======
-  m_RootOrder: 6
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &207624862
 GameObject:
@@ -3545,10 +3510,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -3574,24 +3535,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -3889,10 +3838,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -3918,24 +3863,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -4501,10 +4434,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -4530,24 +4459,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -4641,10 +4558,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -4670,24 +4583,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -5739,7 +5640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453765680}
   m_LocalRotation: {x: 0, y: 0.68308264, z: 0, w: 0.7303411}
-  m_LocalPosition: {x: 89.149025, y: 13.249999, z: 50.433544}
+  m_LocalPosition: {x: 30.11903, y: 7.6, z: 45.99354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9366,11 +9267,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2c60723352e41cb429df281edd313ba6, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
       value: 85
-=======
-      value: 20
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2c60723352e41cb429df281edd313ba6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11547,10 +11444,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -11576,24 +11469,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -12917,7 +12798,7 @@ GameObject:
   - component: {fileID: 1025731636}
   - component: {fileID: 1025731638}
   - component: {fileID: 1025731637}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Platform Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13890,7 +13771,7 @@ GameObject:
   - component: {fileID: 1093971912}
   - component: {fileID: 1093971911}
   - component: {fileID: 1093971910}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Stone_D (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14716,10 +14597,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -14745,24 +14622,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -14987,10 +14852,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -15016,24 +14877,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -15603,10 +15452,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -15632,24 +15477,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -15976,10 +15809,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -16005,24 +15834,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -16864,7 +16681,7 @@ GameObject:
   - component: {fileID: 1306638870}
   - component: {fileID: 1306638869}
   - component: {fileID: 1306638868}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Stone_D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17013,10 +16830,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -17042,24 +16855,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -17476,11 +17277,7 @@ Transform:
   - {fileID: 249330413}
   - {fileID: 930268989}
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 15
-=======
-  m_RootOrder: 17
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357387750
 GameObject:
@@ -19571,11 +19368,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 12
-=======
-  m_RootOrder: 14
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1533240430
 GameObject:
@@ -20290,10 +20083,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -20319,24 +20108,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -21930,10 +21707,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8426974531938994844, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -7171607895111325692, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7750978
@@ -21959,24 +21732,12 @@ PrefabInstance:
       value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65702495048144492, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_Name
       value: StonePlatform_A (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8934777400606672865, guid: 48b5c39e2d5d50b419840ec3e5daaa24, type: 3}
       propertyPath: m_IsActive
@@ -23057,10 +22818,6 @@ PrefabInstance:
     - target: {fileID: -5978986447893417932, guid: 347b731893586f4479a45ae074c7481e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 5.874
-      objectReference: {fileID: 0}
-    - target: {fileID: -296587956940118838, guid: 347b731893586f4479a45ae074c7481e, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 347b731893586f4479a45ae074c7481e, type: 3}
       propertyPath: m_IsActive
@@ -24356,11 +24113,7 @@ Transform:
   - {fileID: 301611736}
   - {fileID: 360393360}
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 17
-=======
-  m_RootOrder: 19
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1878531358
 MonoBehaviour:
@@ -28282,11 +28035,7 @@ Transform:
   - {fileID: 6906810289967989368}
   - {fileID: 6906810288902550961}
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
   m_RootOrder: 19
-=======
-  m_RootOrder: 21
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6494651729112958433
 MeshFilter:

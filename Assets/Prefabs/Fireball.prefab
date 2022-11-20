@@ -140,5 +140,5 @@ MonoBehaviour:
   damageFeedback: {fileID: 1937182735831352, guid: f7cdd42a5ebb49f4a9a578720ddf68ff, type: 3}
   _nocollide:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 1152
   _trackbackDistance: 1
