@@ -11,6 +11,8 @@ public class BaseProjectile : MonoBehaviour
     [SerializeField] private bool _isPooled;
     [SerializeField] private IntReference _damageAmount;
     [SerializeField] private GameObject hitFeedback, damageFeedback;
+    [SerializeField] private LayerMask _nocollide;
+    [SerializeField] private float _trackbackDistance;
 
     private void Awake()
     {
@@ -24,6 +26,14 @@ public class BaseProjectile : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(FireCo());
+    }
+
+    private void Update()
+    {
+        if (_renderer.enabled == true)
+        {
+            TrackBackCollision();
+        }
     }
 
     IEnumerator FireCo()
@@ -79,6 +89,37 @@ public class BaseProjectile : MonoBehaviour
             }
         }
 
+    }
+
+    private void TrackBackCollision()
+    {
+        bool hitObj = Physics.Raycast(transform.position, transform.forward, out RaycastHit raycastHit, _trackbackDistance, ~_nocollide);
+
+        if (hitObj)
+        {
+            GameObject feedback = GameObject.Instantiate(hitFeedback, transform.position, transform.rotation);
+            Debug.Log("Hit object");
+            bool HitEnemyWithPlayerProjectile = raycastHit.collider.gameObject.layer == 9 && gameObject.layer == 7;
+            bool HitPlayerWithEnemyProjectile = raycastHit.collider.gameObject.layer == 6 && gameObject.layer == 10;
+
+            if (HitEnemyWithPlayerProjectile || HitEnemyWithPlayerProjectile)
+            {
+                EntityHealth healthobj = raycastHit.collider.GetComponent<EntityHealth>();
+                if (healthobj != null)
+                {
+                    healthobj.DamageEntity(_damageAmount.ConstantValue);
+                    GameObject.Instantiate(damageFeedback, transform.position, transform.rotation);
+                }
+            }
+            if (_isPooled)
+            {
+                ReturnPooledObjects();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void ReturnPooledObjects()

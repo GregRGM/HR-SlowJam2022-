@@ -462,8 +462,8 @@ MonoBehaviour:
   _slopeIncreaseMultiplier: 0
   _groundDrag: 8
   _airDrag: 1
-  _jumpForce: 15
-  _jumpCooldown: 0.05
+  _jumpForce: 20
+  _jumpCooldown: 0.2
   _airMultiplier: 1
   jumpKey: 32
   sprintKey: 304

@@ -150,7 +150,7 @@ public class PlayerFiringPlatform : MonoBehaviour
             GameObject projectile = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
             projectile.transform.position = spawnPoint.position; //this works
             projectile.transform.rotation = Quaternion.LookRotation(AimDirection, Vector3.up); // this doesn't
-            Debug.Log(AimDirection);
+            //Debug.Log(AimDirection);
             PlayShootSound(fireballShotSFX);
         }
         else
