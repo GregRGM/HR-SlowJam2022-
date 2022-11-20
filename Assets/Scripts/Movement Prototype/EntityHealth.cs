@@ -6,17 +6,8 @@ public class EntityHealth : MonoBehaviour
 {
     [SerializeField] private IntReference _currentHealth;
     [SerializeField] private GameObject hitEffectPrefab;
-<<<<<<< Updated upstream
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private FlashMaterial flashMaterial;
-<<<<<<< HEAD
-=======
-    [SerializeField] private Image healthImage;
-=======
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private FlashSprite _flashSprite;
->>>>>>> Stashed changes
->>>>>>> parent of 8b8859f (Revert "Revert "Revert "Updated and added enemies""")
     
 
     //we can move this to a int scriptable object if needed
@@ -25,29 +16,20 @@ public class EntityHealth : MonoBehaviour
 
     private void Awake()
     {
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-        _maxHealth = _currentHealth.Value;
-        
->>>>>>> parent of 8b8859f (Revert "Revert "Revert "Updated and added enemies""")
         if(flashMaterial == null)
             flashMaterial = GetComponent<FlashMaterial>();
-=======
-        if (_flashSprite == null)
-            _flashSprite = GetComponent<FlashSprite>();
->>>>>>> Stashed changes
     }
 
     public void HitFeedback()
     {
-        if (_flashSprite != null && _spriteRenderer != null)
-            _flashSprite.FlashStart();
+        if (flashMaterial != null && meshRenderer != null)
+            flashMaterial.FlashStart();
+
     }
     public void HitFeedback(Transform _hitArea)
     {
-        if (_flashSprite != null && _spriteRenderer != null)
-            _flashSprite.FlashStart();
+        if (flashMaterial != null && meshRenderer != null)
+            flashMaterial.FlashStart();
 
     }
 
