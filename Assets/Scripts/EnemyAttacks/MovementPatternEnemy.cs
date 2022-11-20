@@ -12,8 +12,6 @@ public class MovementPatternEnemy : BaseEnemyController
     [SerializeField] private List<Transform> _movementPattern = new List<Transform>();
     [SerializeField] private bool stopsAtEndOfPattern;
 
-    [SerializeField] private Animator _anim;
-
     public int _patternIndex;
     public float howclose;
     private float timePast;
@@ -58,8 +56,6 @@ public class MovementPatternEnemy : BaseEnemyController
         {
             _attackType.FireAttack();
         }
-        //this is why the animator is a shit system
-        _anim.SetTrigger("Attacking");
     }
 
     private void LerpToNextPoint()
@@ -127,10 +123,5 @@ public class MovementPatternEnemy : BaseEnemyController
     {
         _movementPattern.Clear();
         _movementPattern = newpattern;
-    }
-
-    public void TriggerHurt()
-    {
-        _anim.SetTrigger("Hit");
     }
 }
