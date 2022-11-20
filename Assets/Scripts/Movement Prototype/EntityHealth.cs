@@ -7,9 +7,14 @@ public class EntityHealth : MonoBehaviour
 {
     [SerializeField] private IntReference _currentHealth;
     [SerializeField] private GameObject hitEffectPrefab;
+<<<<<<< Updated upstream
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private FlashMaterial flashMaterial;
     [SerializeField] private Image healthImage;
+=======
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private FlashSprite _flashSprite;
+>>>>>>> Stashed changes
     
     private const int _healthSlices = 7;
 
@@ -19,10 +24,15 @@ public class EntityHealth : MonoBehaviour
 
     private void Awake()
     {
+<<<<<<< Updated upstream
         _maxHealth = _currentHealth.Value;
         
         if(flashMaterial == null)
             flashMaterial = GetComponent<FlashMaterial>();
+=======
+        if (_flashSprite == null)
+            _flashSprite = GetComponent<FlashSprite>();
+>>>>>>> Stashed changes
     }
 
     private void Update()
@@ -41,14 +51,13 @@ public class EntityHealth : MonoBehaviour
 
     public void HitFeedback()
     {
-        if (flashMaterial != null && meshRenderer != null)
-            flashMaterial.FlashStart();
-
+        if (_flashSprite != null && _spriteRenderer != null)
+            _flashSprite.FlashStart();
     }
     public void HitFeedback(Transform _hitArea)
     {
-        if (flashMaterial != null && meshRenderer != null)
-            flashMaterial.FlashStart();
+        if (_flashSprite != null && _spriteRenderer != null)
+            _flashSprite.FlashStart();
 
     }
 
