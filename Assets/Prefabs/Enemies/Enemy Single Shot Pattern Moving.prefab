@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4659848205465013503}
   - component: {fileID: 4922115952624895431}
   - component: {fileID: 3519030839666101378}
+  - component: {fileID: 7538903889644095170}
   m_Layer: 9
   m_Name: Enemy Single Shot Pattern Moving
   m_TagString: Enemy
@@ -113,6 +114,18 @@ MonoBehaviour:
   _SpawnOrigin: {fileID: 4659848205746489773}
   fireballShotSFX: {fileID: 8300000, guid: 65d8851dfcee3e047b6c04037002bfa2, type: 3}
   _fireRate: 1
+--- !u!114 &7538903889644095170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659848205465013493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdc9cca5d3907f4090bb3fa32b16975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4659848205746489774
 GameObject:
   m_ObjectHideFlags: 0
