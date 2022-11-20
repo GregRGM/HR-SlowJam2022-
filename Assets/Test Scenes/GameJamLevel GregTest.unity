@@ -232,6 +232,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint 000
       objectReference: {fileID: 0}
+    - target: {fileID: 1919931634148086053, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294801239562570231, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
+      propertyPath: rate
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294801239562570231, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
+      propertyPath: count
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294801239562570231, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
+      propertyPath: patrolParents.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294801239562570231, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
+      propertyPath: patrolParents.Array.data[2]
+      value: 
+      objectReference: {fileID: 17788213}
+    - target: {fileID: 5294801239562570231, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
+      propertyPath: patrolParents.Array.data[3]
+      value: 
+      objectReference: {fileID: 17788205}
     - target: {fileID: 6464276856159242954, guid: 0f6f43a1a77af4d448a286d56de8881c, type: 3}
       propertyPath: m_RootOrder
       value: 5
