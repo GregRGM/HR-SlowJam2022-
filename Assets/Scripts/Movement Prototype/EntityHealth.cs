@@ -1,22 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EntityHealth : MonoBehaviour
 {
     [SerializeField] private IntReference _currentHealth;
     [SerializeField] private GameObject hitEffectPrefab;
-<<<<<<< Updated upstream
-    [SerializeField] private MeshRenderer meshRenderer;
-    [SerializeField] private FlashMaterial flashMaterial;
-<<<<<<< HEAD
-=======
     [SerializeField] private Image healthImage;
-=======
+    [SerializeField] private int _healthSlices;
+
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private FlashSprite _flashSprite;
->>>>>>> Stashed changes
->>>>>>> parent of 8b8859f (Revert "Revert "Revert "Updated and added enemies""")
     
 
     //we can move this to a int scriptable object if needed
@@ -25,18 +20,23 @@ public class EntityHealth : MonoBehaviour
 
     private void Awake()
     {
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
         _maxHealth = _currentHealth.Value;
-        
->>>>>>> parent of 8b8859f (Revert "Revert "Revert "Updated and added enemies""")
-        if(flashMaterial == null)
-            flashMaterial = GetComponent<FlashMaterial>();
-=======
         if (_flashSprite == null)
             _flashSprite = GetComponent<FlashSprite>();
->>>>>>> Stashed changes
+    }
+
+    private void Update()
+    {
+        if (healthImage != null)
+        {
+            int health = _currentHealth.Value;
+            float healthProportion = ((float)health / _maxHealth) * _healthSlices;
+            float barsToFill = Mathf.Ceil(healthProportion);
+
+            Debug.Log(health);
+
+            healthImage.fillAmount = barsToFill / _healthSlices;
+        }
     }
 
     public void HitFeedback()
