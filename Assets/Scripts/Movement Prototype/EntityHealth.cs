@@ -33,8 +33,6 @@ public class EntityHealth : MonoBehaviour
             float healthProportion = ((float)health / _maxHealth) * _healthSlices;
             float barsToFill = Mathf.Ceil(healthProportion);
 
-            Debug.Log(health);
-
             healthImage.fillAmount = barsToFill / _healthSlices;
         }
     }
