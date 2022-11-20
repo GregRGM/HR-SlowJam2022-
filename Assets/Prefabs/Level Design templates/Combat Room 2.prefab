@@ -311,10 +311,9 @@ MonoBehaviour:
   - {fileID: 8227412959352105438}
   - {fileID: 8227412958430901613}
   - {fileID: 8227412958200070439}
-  - {fileID: 8227412958200070439}
   waveState: 2
   nextRoomId: 1
-  timeToWait: 4
+  timeToWait: 1
 --- !u!1 &8227412957656563994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,8 +1684,8 @@ MonoBehaviour:
   patrolParents:
   - {fileID: 8227412958051141044}
   - {fileID: 8227412958789834684}
-  count: 5
-  rate: 2
+  count: 20
+  rate: 0.25
 --- !u!1 &8227412958271608326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,8 +2002,8 @@ MonoBehaviour:
   patrolParents:
   - {fileID: 1007390648412714024}
   - {fileID: 1007390648412714024}
-  count: 8
-  rate: 0.8
+  count: 20
+  rate: 0.5
 --- !u!1 &8227412958472037667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,8 +3513,10 @@ MonoBehaviour:
   - {fileID: 626720413714846706, guid: f8f845304d1ea1543ac845eb44da7ac1, type: 3}
   - {fileID: 7693189463948946236, guid: 12e41a9d3a89bb84090f900c44c035a2, type: 3}
   patrolParents:
-  - {fileID: 5879649584758089868}
-  count: 4
+  - {fileID: 8227412957927591544}
+  - {fileID: 8227412958789834684}
+  - {fileID: 8227412958051141044}
+  count: 8
   rate: 1
 --- !u!1 &8227412959359037079
 GameObject:
@@ -4543,11 +4544,6 @@ PrefabInstance:
 --- !u!4 &5505132921755675023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4488836789854537230, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
-  m_PrefabInstance: {fileID: 8227412957956550529}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5879649584758089868 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2572982947857909517, guid: 77ba92d88b7dc72479c53f92ddcc1d21, type: 3}
   m_PrefabInstance: {fileID: 8227412957956550529}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8227412959333059713
