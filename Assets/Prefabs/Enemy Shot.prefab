@@ -95,7 +95,7 @@ SphereCollider:
   m_GameObject: {fileID: 7698696348989764701}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.65
   m_Center: {x: 0, y: 0, z: 0}
@@ -138,3 +138,7 @@ MonoBehaviour:
     Variable: {fileID: 0}
   hitFeedback: {fileID: 1937182735831352, guid: e125cec2cc6d4494cb09dc98b0f62c4a, type: 3}
   damageFeedback: {fileID: 1937182735831352, guid: f7cdd42a5ebb49f4a9a578720ddf68ff, type: 3}
+  _nocollide:
+    serializedVersion: 2
+    m_Bits: 1664
+  _trackbackDistance: 0.7

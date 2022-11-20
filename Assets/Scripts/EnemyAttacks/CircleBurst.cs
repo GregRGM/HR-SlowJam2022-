@@ -59,12 +59,15 @@ public class CircleBurst : BaseAttack
     {
         foreach (var point in _spawnPoints)
         {
-            GameObject projectile = ProjectilePoolManager.instance.GetPooledEnemySingleProjectileObj();
-
-            //Fire Projectile directly from Spawn Origin
+            GameObject projectile;
             if (IsPlayer)
+            {
                 projectile = ProjectilePoolManager.instance.GetPooledPlayerSingleProjectileObj();
-
+            }
+            else
+            {
+                projectile = ProjectilePoolManager.instance.GetPooledEnemySingleProjectileObj();
+            }
             projectile.transform.position = _SpawnOrigin.position;
             //aiming forward
             projectile.transform.rotation = Quaternion.LookRotation(_SpawnOrigin.forward, Vector3.up);
