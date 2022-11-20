@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 56bbb0d1246fdde4ea6ad4a0e4864d3e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 6d7b62c805089824d90edb114712bf86, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Environment Assets/Ground Materials/Cave Background/mineral_cave.sbsar
